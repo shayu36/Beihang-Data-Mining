@@ -137,6 +137,10 @@ with tabs[1]:
     if st.button("Execute Filter", key="cat_exec"):
         st.session_state["cat_filter_params"] = filter_params
         st.session_state["cat_total"] = None
+        # cat_page is a widget key (number_input below) — must be reset
+        # before that widget is instantiated on the next run, not after.
+        st.session_state["cat_page"] = 1
+        st.rerun()
 
     # If we have stored filter params, use them for pagination
     active_params = st.session_state.get("cat_filter_params", filter_params)
@@ -155,26 +159,37 @@ with tabs[1]:
     if total > 0:
         total_pages = max(1, (total + ps - 1) // ps)
 
-        # Pagination controls
+        # Pagination controls.
+        # cat_page must be seeded BEFORE st.number_input is instantiated
+        # (with `key=` set, Streamlit reads the initial value from
+        # session_state; setting the key afterwards raises
+        # StreamlitAPIException). Prev/next therefore use on_click
+        # callbacks, which run before the next script run and may modify
+        # widget keys.
+        if "cat_page" not in st.session_state:
+            st.session_state["cat_page"] = 1
+        # Clamp in case page size changed and shrank total_pages
+        st.session_state["cat_page"] = min(st.session_state["cat_page"], total_pages)
+        cur_page = st.session_state["cat_page"]
+
+        def _prev_page():
+            st.session_state["cat_page"] = max(1, st.session_state["cat_page"] - 1)
+
+        def _next_page():
+            st.session_state["cat_page"] = min(total_pages, st.session_state["cat_page"] + 1)
+
         pc1, pc2, pc3, pc4 = st.columns([1, 2, 1, 1])
         with pc1:
-            cur_page = st.number_input(
+            st.number_input(
                 "Page", min_value=1, max_value=total_pages,
-                value=1, step=1, key="cat_page",
+                step=1, key="cat_page",
             )
         with pc2:
             st.caption(f"共 {total} 条记录，{total_pages} 页")
         with pc3:
-            if st.button("上一页", disabled=(cur_page <= 1), key="cat_prev"):
-                st.session_state["cat_page"] = max(1, cur_page - 1)
-                st.rerun()
+            st.button("上一页", on_click=_prev_page, disabled=(cur_page <= 1), key="cat_prev")
         with pc4:
-            if st.button("下一页", disabled=(cur_page >= total_pages), key="cat_next"):
-                st.session_state["cat_page"] = min(total_pages, cur_page + 1)
-                st.rerun()
-
-        # Sync page input with session
-        cur_page = st.session_state.get("cat_page", 1)
+            st.button("下一页", on_click=_next_page, disabled=(cur_page >= total_pages), key="cat_next")
 
         try:
             r = api_get("/catalog/events", params={**active_params, "page": cur_page})

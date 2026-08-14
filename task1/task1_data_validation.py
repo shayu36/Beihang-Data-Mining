@@ -22,9 +22,12 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
-    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
+def setup_windows_console():
+    """Re-wrap stdout/stderr as UTF-8 (called from main() only — wrapping at
+    import time breaks pytest's capture machinery)."""
+    if sys.platform == "win32":
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -296,6 +299,7 @@ def export_results(df, stats, missing_summary, output_dir):
 # 主流程
 # ============================================================
 def main():
+    setup_windows_console()
     args = parse_args()
     input_csv = args.input
     output_dir = args.output_dir

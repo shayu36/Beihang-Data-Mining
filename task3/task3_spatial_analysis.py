@@ -22,8 +22,11 @@ import sys, io, json
 import warnings
 warnings.filterwarnings("ignore")
 
-if sys.platform == "win32":
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+def setup_windows_console():
+    """Re-wrap stdout as UTF-8 (called from main() only — wrapping at
+    import time breaks pytest's capture machinery)."""
+    if sys.platform == "win32":
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 import matplotlib
 matplotlib.use("Agg")
@@ -124,6 +127,7 @@ def summarize_box(df, lon_min, lon_max, lat_min, lat_max):
 
 # ================================================================
 def main():
+    setup_windows_console()
     args = parse_args()
     INPUT_CSV = args.input
     OUTPUT_DIR = args.output_dir
