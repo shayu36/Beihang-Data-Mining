@@ -38,7 +38,7 @@ Thumbs.db
 
 # Project-specific
 *.joblib
-earthquake-analysis/data/models/
-earthquake-analysis/data/processed/
-earthquake-analysis/data/raw/
-earthquake-analysis/outputs/
+task5/earthquake-analysis/data/models/
+task5/earthquake-analysis/data/processed/
+task5/earthquake-analysis/data/raw/
+task5/earthquake-analysis/outputs/
