@@ -1,0 +1,17 @@
+\begin{minipage}{\textwidth}
+  \centering
+  \captionof{table}{独立检测分支与秩融合方法的测试集结果}
+  \label{tab:task4-results}
+  \begin{tabular}{lccccc}
+    \toprule
+    方法 & AUROC & AUPRC & F1 & Precision & Recall \\
+    \midrule
+    Isolation Forest & \textbf{0.9848} & 0.8932 & 0.8632 & 0.8542 & \textbf{0.8723} \\
+    HBOS & 0.9821 & 0.8592 & 0.8187 & 0.7980 & 0.8404 \\
+    MCD & 0.9791 & 0.8245 & 0.7923 & 0.7257 & \textbf{0.8723} \\
+    秩融合 & 0.9846 & \textbf{0.9060} & \textbf{0.8663} & \textbf{0.8710} & 0.8617 \\
+    \bottomrule
+  \end{tabular}
+  \par\smallskip
+  {\small 粗体表示每列最优值，F1、Precision 和 Recall 对应各方法的测试集最佳 F1 阈值}
+\end{minipage}

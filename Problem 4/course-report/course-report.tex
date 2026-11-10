@@ -1,0 +1,22 @@
+% !TeX program = pdflatex
+% !TeX encoding = UTF-8
+\documentclass[sigconf,nonacm,screen]{acmart}
+\usepackage{styles/course-report}
+\setcitestyle{numbers,square,comma}
+\title[数据挖掘导论课程报告]{数据挖掘导论课程报告}
+
+\begin{document}
+
+\maketitle
+
+\section{多检测器秩融合的无监督甲状腺疾病判断方法}
+\label{sec:task4}
+\input{sec/task4-method}
+\input{sec/task4-experiments}
+
+\subsection{小结}
+多检测器秩融合将随机隔离、边缘密度与稳健距离提供的异常次序整合为统一评分。在给定 Thyroid 数据划分下，融合方法的 AUROC 为 0.9846，AUPRC 为 0.9060，测试集最佳 F1 为 0.8663。相较 Isolation Forest 分支，融合后的 AUPRC 提高 0.0128，精确率提高 0.0168。
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bib/course-report-references}
+\end{document}

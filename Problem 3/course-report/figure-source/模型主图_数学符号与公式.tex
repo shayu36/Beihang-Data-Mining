@@ -1,0 +1,384 @@
+% !TeX program = xelatex
+% UTF-8；中文主图对应的全部数学符号与公式。
+% 图中文字依据：course-report/sec/task3-method.tex
+% 验证选权依据：course-report/sec/task3-experiments.tex
+% 编译：xelatex 模型主图_数学符号与公式.tex
+\documentclass[UTF8,a4paper,11pt]{ctexart}
+\usepackage[margin=22mm]{geometry}
+\usepackage{amsmath,amssymb,bm,longtable,booktabs,array}
+\allowdisplaybreaks
+\setlength{\parindent}{0pt}
+\title{模型主图：数学符号与公式 LaTeX 代码}
+\author{}\date{}
+\begin{document}\maketitle
+\section{符号与论文保持一致}
+本文件对应一页中文模型主图。输入、预测、损失函数与索引采用当前论文方法部分的记号；验证集选权来自实验部分。图中以 $s_j,s_y$ 表示标准差，$\sigma$ 在论文方法中表示 Sigmoid，不用于标准差。图中 $g_i,r_i$ 均为标准化预测，输出 $\widehat y_i$ 的单位为 ppm。
+\section{图内全部公式与数学标签}
+% F01 [window] 输入窗口与维度
+% 对应论文：eq:window；实验配置
+\subsection*{F01：输入窗口与维度}
+\[
+\mathbf{X}_i\in\mathbb{R}^{L\times F},\quad L=12,\ F=21
+\]
+
+% F02 [standardize_x] 逐特征标准化
+% 对应论文：eq:standardization，第一式
+\subsection*{F02：逐特征标准化}
+\[
+\widetilde{X}_{i,\tau,j}=\frac{X_{i,\tau,j}-\mu_j}{s_j}
+\]
+
+% F03 [standardize_y] 目标标准化
+% 对应论文：eq:standardization，第二式
+\subsection*{F03：目标标准化}
+\[
+\widetilde{y}_i=\frac{y_i-\mu_y}{s_y}
+\]
+
+% F04 [tensor] 标准化输入窗口
+% 对应论文：eq:standardization；L=12、F=21
+\subsection*{F04：标准化输入窗口}
+\[
+\widetilde{\mathbf{X}}_i\in\mathbb{R}^{12\times21}
+\]
+
+% F05 [hidden] GRU 隐藏维度
+% 对应论文：实验配置
+\subsection*{F05：GRU 隐藏维度}
+\[
+H=128
+\]
+
+% F06 [dropout] 层间及回归头 Dropout
+% 对应论文：eq:stacking、eq:head_output；实验配置
+\subsection*{F06：层间及回归头 Dropout}
+\[
+\mathcal{D}_{p},\quad p=0.2
+\]
+
+% F07 [head_width] 回归头结构
+% 对应论文：eq:head_hidden、eq:head_output；实验配置
+\subsection*{F07：回归头结构}
+\[
+H\rightarrow d\rightarrow1,\quad d=64
+\]
+
+% F08 [last_state] 取第二层最后位置状态
+% 对应论文：eq:head_hidden
+\subsection*{F08：取第二层最后位置状态}
+\[
+\mathbf{h}_{i,L}^{(2,k)}
+\]
+
+% F09 [member_1] 第 1 个成员的标准化预测
+% 对应论文：eq:head_output，k 取具体编号
+\subsection*{F09：第 1 个成员的标准化预测}
+\[
+f_{\theta_1}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F10 [member_2] 第 2 个成员的标准化预测
+% 对应论文：eq:head_output，k 取具体编号
+\subsection*{F10：第 2 个成员的标准化预测}
+\[
+f_{\theta_2}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F11 [member_3] 第 3 个成员的标准化预测
+% 对应论文：eq:head_output，k 取具体编号
+\subsection*{F11：第 3 个成员的标准化预测}
+\[
+f_{\theta_3}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F12 [member_4] 第 4 个成员的标准化预测
+% 对应论文：eq:head_output，k 取具体编号
+\subsection*{F12：第 4 个成员的标准化预测}
+\[
+f_{\theta_4}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F13 [member_5] 第 5 个成员的标准化预测
+% 对应论文：eq:head_output，k 取具体编号
+\subsection*{F13：第 5 个成员的标准化预测}
+\[
+f_{\theta_5}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F14 [ensemble] 五成员预测均值
+% 对应论文：eq:ensemble（逐式复制）
+\subsection*{F14：五成员预测均值}
+\[
+g_i=\frac{1}{K}\sum_{k=1}^{K} f_{\theta_k}(\widetilde{\mathbf{X}}_i)
+\]
+
+% F15 [member_count] 成员数量
+% 对应论文：实验配置
+\subsection*{F15：成员数量}
+\[
+K=5
+\]
+
+% F16 [g] GRU 集成预测
+% 对应论文：eq:ensemble
+\subsection*{F16：GRU 集成预测}
+\[
+g_i
+\]
+
+% F17 [flatten] 按行展平的向量
+% 对应论文：eq:ridge_prediction，第一式
+\subsection*{F17：按行展平的向量}
+\[
+\mathbf{q}_i=\operatorname{vec}_{\mathrm{row}} (\widetilde{\mathbf{X}}_i)\in\mathbb{R}^{LF}
+\]
+
+% F18 [flatten_dimension] 展平后的维度
+% 对应论文：L=12、F=21
+\subsection*{F18：展平后的维度}
+\[
+LF=252
+\]
+
+% F19 [ridge] 岭回归预测
+% 对应论文：eq:ridge_prediction，第二式
+\subsection*{F19：岭回归预测}
+\[
+r_i=\boldsymbol{\beta}^{\top}\mathbf{q}_i+b
+\]
+
+% F20 [alpha] 岭回归正则系数
+% 对应论文：实验配置
+\subsection*{F20：岭回归正则系数}
+\[
+\alpha=1
+\]
+
+% F21 [r] 岭回归预测标量
+% 对应论文：eq:ridge_prediction
+\subsection*{F21：岭回归预测标量}
+\[
+r_i
+\]
+
+% F22 [fusion] 标准化空间内的加权融合
+% 对应论文：eq:fusion，第一式
+\subsection*{F22：标准化空间内的加权融合}
+\[
+\widehat{\widetilde{y}}_i(w)=w g_i+(1-w)r_i
+\]
+
+% F23 [weight_domain] 融合权重取值区间
+% 对应论文：eq:fusion，第二式
+\subsection*{F23：融合权重取值区间}
+\[
+w\in[0,1]
+\]
+
+% F24 [weight_g] GRU 集成权重
+% 对应论文：实验配置与 results/metrics.json
+\subsection*{F24：GRU 集成权重}
+\[
+w^*=0.95
+\]
+
+% F25 [weight_r] 岭回归权重
+% 对应论文：由 w*=0.95 得到
+\subsection*{F25：岭回归权重}
+\[
+1-w^*=0.05
+\]
+
+% F26 [fused] 选定权重下的标准化融合预测
+% 对应论文：eq:fusion，取 w=w*
+\subsection*{F26：选定权重下的标准化融合预测}
+\[
+\widehat{\widetilde{y}}_i(w^*)
+\]
+
+% F27 [inverse] 目标浓度还原
+% 对应论文：eq:final_prediction；用 eq:ensemble、eq:fusion 等价写成紧凑形式
+\subsection*{F27：目标浓度还原}
+\[
+\widehat{y}_i=\mu_y+s_y\widehat{\widetilde{y}}_i(w^*)
+\]
+
+% F28 [output] 单步 CO$_2$ 浓度预测
+% 对应论文：eq:final_prediction，单位 ppm
+\subsection*{F28：单步 CO$_2$ 浓度预测}
+\[
+\widehat{y}_i
+\]
+
+% F29 [gru_loss] GRU 成员训练损失
+% 对应论文：eq:gru_loss（逐式复制）
+\subsection*{F29：GRU 成员训练损失}
+\[
+\mathcal{L}_{\mathrm{G}}(\theta_k)= \frac{1}{M_{\mathrm{tr}}} \sum_{i\in\mathcal{I}_{\mathrm{tr}}} \bigl(f_{\theta_k}(\widetilde{\mathbf{X}}_i)-\widetilde{y}_i\bigr)^2
+\]
+
+% F30 [ridge_loss] 岭回归训练目标
+% 对应论文：eq:ridge_loss（逐式复制，仅删除 split 排版环境）
+\subsection*{F30：岭回归训练目标}
+\[
+\mathcal{L}_{\mathrm{R}}(\boldsymbol{\beta},b) =\sum_{i\in\mathcal{I}_{\mathrm{tr}}} (\widetilde{y}_i-\boldsymbol{\beta}^{\top}\mathbf{q}_i-b)^2 +\alpha\lVert\boldsymbol{\beta}\rVert_2^2.
+\]
+
+% F31 [select] 验证集选择全局融合权重
+% 对应论文：实验部分 eq:fusion_selection（逐式复制）
+\subsection*{F31：验证集选择全局融合权重}
+\[
+w^*=\underset{w\in\mathcal{W}}{\arg\min}\; \frac{1}{|\mathcal{I}_{\mathrm{va}}|} \sum_{i\in\mathcal{I}_{\mathrm{va}}} \bigl(w g_i+(1-w)r_i-\widetilde{y}_i\bigr)^2
+\]
+
+% F32 [grid] 候选权重集合
+% 对应论文：实验配置与训练细节
+\subsection*{F32：候选权重集合}
+\[
+\mathcal{W}=\{0,0.05,\ldots,0.95,1\}
+\]
+
+% F33 [multiply] 标量乘法节点
+% 对应论文：加权融合运算
+\subsection*{F33：标量乘法节点}
+\[
+\times
+\]
+
+% F34 [plus] 求和节点
+% 对应论文：加权融合运算
+\subsection*{F34：求和节点}
+\[
++
+\]
+
+% F35 [co2] 化学符号与单位
+% 对应论文：任务定义
+\subsection*{F35：化学符号与单位}
+\[
+\mathrm{CO}_{2},\quad\mathrm{ppm}
+\]
+
+% F36 [relu] 回归头激活函数
+% 对应论文：eq:head_hidden
+\subsection*{F36：回归头激活函数}
+\[
+\operatorname{ReLU}
+\]
+
+\section{完整输出与紧凑图示的等价关系}
+% 论文原式 eq:final_prediction，未改动数学内容。
+\[
+\widehat{y}_i=\mu_y+s_y \left[w^*\frac{1}{K}\sum_{k=1}^{K} f_{\theta_k}(\widetilde{\mathbf{X}}_i) +(1-w^*)r_i\right].
+\]
+将 $g_i=K^{-1}\sum_{k=1}^{K}f_{\theta_k}(\widetilde{\mathbf X}_i)$ 和 $\widehat{\widetilde y}_i(w)=wg_i+(1-w)r_i$ 代入，得到图中的紧凑式：
+\[
+\widehat{y}_i=\mu_y+s_y\widehat{\widetilde{y}}_i(w^*)
+\]
+\section{全部符号对照表}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.37\linewidth}p{0.57\linewidth}}
+\toprule 符号 & 含义 \\ \midrule \endhead
+% LaTeX: i
+$i$ & 监督样本索引 \\
+% LaTeX: t
+$t$ & 观测行索引 \\
+% LaTeX: \tau
+$\tau$ & 窗口内部位置索引 \\
+% LaTeX: j
+$j$ & 特征索引 \\
+% LaTeX: j_*
+$j_*$ & CO$_2$ 目标特征索引 \\
+% LaTeX: k
+$k$ & GRU 成员索引，1 至 K \\
+% LaTeX: L
+$L$ & 窗口长度，本模型为 12 \\
+% LaTeX: F
+$F$ & 特征数，本模型为 21 \\
+% LaTeX: H
+$H$ & GRU 隐藏维度，本模型为 128 \\
+% LaTeX: d
+$d$ & 回归头隐藏维度，本模型为 64 \\
+% LaTeX: K
+$K$ & GRU 成员数，本模型为 5 \\
+% LaTeX: p
+$p$ & Dropout 丢弃概率，本模型为 0.2 \\
+% LaTeX: \mathbf{X}_i
+$\mathbf{X}_i$ & 第 i 个多变量输入窗口 \\
+% LaTeX: X_{i,\tau,j}
+$X_{i,\tau,j}$ & 窗口内位置 $\tau$ 的第 j 个特征值 \\
+% LaTeX: \widetilde{\mathbf{X}}_i
+$\widetilde{\mathbf{X}}_i$ & 标准化后的输入窗口 \\
+% LaTeX: \widetilde{X}_{i,\tau,j}
+$\widetilde{X}_{i,\tau,j}$ & 标准化后的逐特征数值 \\
+% LaTeX: y_i
+$y_i$ & 真实 CO$_2$ 浓度，单位 ppm \\
+% LaTeX: \widetilde{y}_i
+$\widetilde{y}_i$ & 标准化目标值 \\
+% LaTeX: \widehat{y}_i
+$\widehat{y}_i$ & 反标准化后的预测浓度，单位 ppm \\
+% LaTeX: \widehat{\widetilde{y}}_i(w)
+$\widehat{\widetilde{y}}_i(w)$ & 权重为 w 时的标准化融合预测 \\
+% LaTeX: \mu_j,\ s_j
+$\mu_j,\ s_j$ & 第 j 个特征的训练均值和标准差 \\
+% LaTeX: \mu_y,\ s_y
+$\mu_y,\ s_y$ & 目标 CO$_2$ 特征的训练均值和标准差 \\
+% LaTeX: \theta_k
+$\theta_k$ & 第 k 个 GRU 及其回归头的参数集合 \\
+% LaTeX: f_{\theta_k}
+$f_{\theta_k}$ & 第 k 个完整非线性预测器 \\
+% LaTeX: f_{\theta_k}(\widetilde{\mathbf{X}}_i)
+$f_{\theta_k}(\widetilde{\mathbf{X}}_i)$ & 第 k 个成员的标准化标量预测 \\
+% LaTeX: \mathbf{h}_{i,L}^{(2,k)}
+$\mathbf{h}_{i,L}^{(2,k)}$ & 第 k 个成员的第二层 GRU 在最后位置 L 的隐藏状态 \\
+% LaTeX: \mathcal{D}_p
+$\mathcal{D}_p$ & 丢弃概率为 p 的 Dropout 算子 \\
+% LaTeX: g_i
+$g_i$ & K 个 GRU 预测值的算术平均 \\
+% LaTeX: r_i
+$r_i$ & 岭回归分支的标准化预测 \\
+% LaTeX: \mathbf{q}_i
+$\mathbf{q}_i$ & 按行展平后的 LF 维特征向量 \\
+% LaTeX: \operatorname{vec}_{\mathrm{row}}
+$\operatorname{vec}_{\mathrm{row}}$ & 按行展平算子 \\
+% LaTeX: \boldsymbol{\beta},\ b
+$\boldsymbol{\beta},\ b$ & 岭回归系数向量与截距 \\
+% LaTeX: \alpha
+$\alpha$ & 岭回归 L2 正则系数，本模型为 1 \\
+% LaTeX: w,\ 1-w
+$w,\ 1-w$ & GRU 集成与岭回归的组合权重 \\
+% LaTeX: w^*
+$w^*$ & 验证集 MSE 最小的全局权重，保存值为 0.95 \\
+% LaTeX: \mathcal{W}
+$\mathcal{W}$ & 离散候选权重集合，共 21 个候选值 \\
+% LaTeX: \mathcal{I}_{\mathrm{tr}}
+$\mathcal{I}_{\mathrm{tr}}$ & 训练样本索引集 \\
+% LaTeX: M_{\mathrm{tr}}=|\mathcal{I}_{\mathrm{tr}}|
+$M_{\mathrm{tr}}=|\mathcal{I}_{\mathrm{tr}}|$ & 训练样本数 \\
+% LaTeX: \mathcal{I}_{\mathrm{va}}
+$\mathcal{I}_{\mathrm{va}}$ & 验证样本索引集 \\
+% LaTeX: |\mathcal{I}_{\mathrm{va}}|
+$|\mathcal{I}_{\mathrm{va}}|$ & 验证样本数 \\
+% LaTeX: \mathcal{L}_{\mathrm{G}}(\theta_k)
+$\mathcal{L}_{\mathrm{G}}(\theta_k)$ & GRU 成员的标准化均方误差 \\
+% LaTeX: \mathcal{L}_{\mathrm{R}}(\boldsymbol{\beta},b)
+$\mathcal{L}_{\mathrm{R}}(\boldsymbol{\beta},b)$ & 岭回归残差平方和与 L2 正则项之和 \\
+% LaTeX: \mathbb{R}^{L\times F},\ \mathbb{R}^{LF}
+$\mathbb{R}^{L\times F},\ \mathbb{R}^{LF}$ & 实数矩阵空间与实数向量空间 \\
+% LaTeX: (\cdot)^\top
+$(\cdot)^\top$ & 转置 \\
+% LaTeX: \lVert\boldsymbol{\beta}\rVert_2^2
+$\lVert\boldsymbol{\beta}\rVert_2^2$ & 系数向量的平方 L2 范数 \\
+% LaTeX: \sum
+$\sum$ & 求和 \\
+% LaTeX: \arg\min
+$\arg\min$ & 使目标函数最小的自变量取值 \\
+% LaTeX: \in,\ [0,1],\ \{\cdots\}
+$\in,\ [0,1],\ \{\cdots\}$ & 集合隶属、闭区间、离散集合 \\
+% LaTeX: \times,\ +,\ -
+$\times,\ +,\ -$ & 标量乘法、加法、减法 \\
+% LaTeX: \operatorname{ReLU}
+$\operatorname{ReLU}$ & 回归头使用的 ReLU 激活函数 \\
+% LaTeX: \mathrm{CO}_{2},\ \mathrm{ppm}
+$\mathrm{CO}_{2},\ \mathrm{ppm}$ & 二氧化碳及浓度单位 \\
+\bottomrule\end{longtable}
+\end{document}

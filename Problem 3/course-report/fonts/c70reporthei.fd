@@ -1,0 +1,13 @@
+% pdfLaTeX CJK family mapped to bundled TrueType font.
+\ProvidesFile{c70reporthei.fd}
+\DeclareFontFamily{C70}{reporthei}{\hyphenchar\font\m@ne}
+\DeclareFontShape{C70}{reporthei}{m}{n}{<-> CJK * unihei}{\CJKnormal}
+\DeclareFontShape{C70}{reporthei}{m}{it}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reporthei}{m}{sl}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reporthei}{b}{n}{<-> CJKb * unihei}{\CJKbold}
+\DeclareFontShape{C70}{reporthei}{b}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reporthei}{b}{sl}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reporthei}{bx}{n}{<-> CJKb * unihei}{\CJKbold}
+\DeclareFontShape{C70}{reporthei}{bx}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reporthei}{bx}{sl}{<-> CJKb * unikai}{\CJKbold}
+\endinput

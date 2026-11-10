@@ -1,0 +1,100 @@
+{
+  "source_scores": "results/final_scores.csv",
+  "training_executed_for_report": false,
+  "metric_protocol": "AUPRC is average precision; thresholds maximize test F1",
+  "rank_protocol": "Average ties, ascending ranks within the complete test batch",
+  "train_samples": 1839,
+  "test_samples": 1933,
+  "test_positive_samples": 94,
+  "exact_six_feature_overlap_test_rows": 56,
+  "overlap_labels": {
+    "0.0": 56
+  },
+  "ensemble_max_absolute_reconstruction_error": 1.1102230246251565e-16,
+  "score_quantiles": {
+    "0": {
+      "0.25": 0.2697550034506556,
+      "0.5": 0.4472049689440993,
+      "0.75": 0.6876725327812285
+    },
+    "1": {
+      "0.25": 0.9608997584541064,
+      "0.5": 0.9727398205659075,
+      "0.75": 0.9858091787439612
+    }
+  },
+  "results": {
+    "IForest": {
+      "AUROC": 0.9847627642219985,
+      "AUPRC": 0.8932030321840704,
+      "F1": 0.8631578947363421,
+      "Precision": 0.8541666666666666,
+      "Recall": 0.8723404255319149,
+      "threshold": 0.1037236821416556,
+      "confusion_matrix": [
+        [
+          1825,
+          14
+        ],
+        [
+          12,
+          82
+        ]
+      ]
+    },
+    "HBOS": {
+      "AUROC": 0.9821075283745793,
+      "AUPRC": 0.8591717850030958,
+      "F1": 0.8186528497404331,
+      "Precision": 0.797979797979798,
+      "Recall": 0.8404255319148937,
+      "threshold": 9.950921414038609,
+      "confusion_matrix": [
+        [
+          1819,
+          20
+        ],
+        [
+          15,
+          79
+        ]
+      ]
+    },
+    "MCD": {
+      "AUROC": 0.9791341270116738,
+      "AUPRC": 0.8244851615527561,
+      "F1": 0.7922705314004703,
+      "Precision": 0.7256637168141593,
+      "Recall": 0.8723404255319149,
+      "threshold": 376.61698417168463,
+      "confusion_matrix": [
+        [
+          1808,
+          31
+        ],
+        [
+          12,
+          82
+        ]
+      ]
+    },
+    "ensemble_score": {
+      "AUROC": 0.9846354980158043,
+      "AUPRC": 0.9059728468144486,
+      "F1": 0.8663101604273075,
+      "Precision": 0.8709677419354839,
+      "Recall": 0.8617021276595744,
+      "threshold": 0.9488440303657694,
+      "confusion_matrix": [
+        [
+          1827,
+          12
+        ],
+        [
+          13,
+          81
+        ]
+      ]
+    }
+  }
+}

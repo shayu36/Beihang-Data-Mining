@@ -1,0 +1,13 @@
+% pdfLaTeX CJK family mapped to bundled TrueType font.
+\ProvidesFile{c70reportkai.fd}
+\DeclareFontFamily{C70}{reportkai}{\hyphenchar\font\m@ne}
+\DeclareFontShape{C70}{reportkai}{m}{n}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reportkai}{m}{it}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reportkai}{m}{sl}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reportkai}{b}{n}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportkai}{b}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportkai}{b}{sl}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportkai}{bx}{n}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportkai}{bx}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportkai}{bx}{sl}{<-> CJKb * unikai}{\CJKbold}
+\endinput

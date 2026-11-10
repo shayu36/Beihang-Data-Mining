@@ -1,0 +1,12 @@
+# Project default: pdfLaTeX; BibTeX is handled automatically by latexmk.
+# 工程使用子目录：样式在 styles/，文献在 bib/，字体度量在 fonts/。
+# latexmk 会读取本文件，因此本地编译、编辑器与 Overleaf 都无需额外配置。
+$pdf_mode = 1;
+$pdflatex = 'pdflatex -no-shell-escape %O %S';
+
+my $pathsep = $^O eq 'MSWin32' ? ';' : ':';
+$ENV{TEXINPUTS} = join($pathsep, '.', './styles', './fonts', (defined $ENV{TEXINPUTS} ? $ENV{TEXINPUTS} : ''));
+$ENV{BIBINPUTS} = join($pathsep, '.', './bib', (defined $ENV{BIBINPUTS} ? $ENV{BIBINPUTS} : ''));
+$ENV{BSTINPUTS} = join($pathsep, '.', './bib', (defined $ENV{BSTINPUTS} ? $ENV{BSTINPUTS} : ''));
+$ENV{TFMFONTS}  = join($pathsep, '.', './fonts', (defined $ENV{TFMFONTS} ? $ENV{TFMFONTS} : ''));
+$ENV{VFFONTS}   = join($pathsep, '.', './fonts', (defined $ENV{VFFONTS} ? $ENV{VFFONTS} : ''));

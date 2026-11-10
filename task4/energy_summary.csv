@@ -1,2 +1,0 @@
-﻿strongest_event_mag,strongest_event_place,strongest_event_rel_index,total_rel_index,strongest_share_pct,formula,note
-8.8,"2025 Kamchatka Peninsula, Russia Earthquake",2818382.9312644606,3639059.788998108,77.45,E_rel = 10^(1.5*(M-4.5)),"Proxy index only — not joules, not intensity, not risk."

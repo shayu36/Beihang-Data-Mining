@@ -1,0 +1,5 @@
+AUROC=0.9846
+AUPRC=0.9060
+F1=0.8663
+Precision=0.8710
+Recall=0.8617
