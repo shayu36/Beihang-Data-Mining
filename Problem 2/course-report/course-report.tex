@@ -1,0 +1,23 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[sigconf,nonacm,screen]{acmart}
+\usepackage{styles/course-report}
+\usepackage{amsmath,booktabs,array,multirow}
+\setcitestyle{super,square,comma}
+\title[数据挖掘导论课程报告]{数据挖掘导论课程报告}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ind}{\mathbb{I}}
+\input{sec/verified-values}
+\begin{document}
+\maketitle
+\section{全局分类与局部记忆融合的工业图像异常检测方法}
+\label{sec:task2}
+\input{sec/task2-method}
+\input{sec/task2-experiments}
+\newpage
+\subsection{小结}
+全局分类与局部记忆融合分别利用整图外观和正常局部参照计算异常程度。冻结的多层卷积特征为两个分支提供共享表示，训练集内的分层五折评分用于选择分支参数、校准尺度与确定融合阈值。在本次完整运行中，融合方法正确判断课程测试集全部102张图像，检出30张异常，并将两个独立分支各自的2次误报降至0次。结果表明，两种表示在这组样本上具有互补作用；其对新批次及未见缺陷的适用性仍需独立数据检验。
+\FloatBarrier
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bib/course-report-references}
+\end{document}

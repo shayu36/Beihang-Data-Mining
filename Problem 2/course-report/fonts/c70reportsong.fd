@@ -1,0 +1,13 @@
+% pdfLaTeX CJK family mapped to bundled TrueType font.
+\ProvidesFile{c70reportsong.fd}
+\DeclareFontFamily{C70}{reportsong}{\hyphenchar\font\m@ne}
+\DeclareFontShape{C70}{reportsong}{m}{n}{<-> CJK * unisong}{\CJKnormal}
+\DeclareFontShape{C70}{reportsong}{m}{it}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reportsong}{m}{sl}{<-> CJK * unikai}{\CJKnormal}
+\DeclareFontShape{C70}{reportsong}{b}{n}{<-> CJKb * unisong}{\CJKbold}
+\DeclareFontShape{C70}{reportsong}{b}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportsong}{b}{sl}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportsong}{bx}{n}{<-> CJKb * unisong}{\CJKbold}
+\DeclareFontShape{C70}{reportsong}{bx}{it}{<-> CJKb * unikai}{\CJKbold}
+\DeclareFontShape{C70}{reportsong}{bx}{sl}{<-> CJKb * unikai}{\CJKbold}
+\endinput
