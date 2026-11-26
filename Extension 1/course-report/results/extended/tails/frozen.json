@@ -1,0 +1,458 @@
+{
+  "protocol_sha256": "c980c74072ea49d8f280c9bad12a260c8a41b490e33a5b746fed137e6e8609f8",
+  "train_member_sha256": "dc037635fd43626fa57618b5c5635e86515d5647d5e22a943316d58dc9edf22e",
+  "test_member_read": false,
+  "fit": 1425,
+  "calibrate": 357,
+  "selected": "both_gpd",
+  "threshold": 2.001376362249395,
+  "splices": [
+    {
+      "raw": 1,
+      "column": 0,
+      "direction": 1,
+      "cutoff": -0.03695094666477351,
+      "anchor": 0.564225603027367,
+      "slope": 0.38480734692353247,
+      "shape": 0.0898877547881835,
+      "scale": 0.20398656402982135,
+      "excess_n": 140
+    },
+    {
+      "raw": 5,
+      "column": 2,
+      "direction": -1,
+      "cutoff": 0.87054864890101,
+      "anchor": 0.5478680550283914,
+      "slope": 0.3462185979857905,
+      "shape": 0.0,
+      "scale": 0.3446407931452031,
+      "excess_n": 135
+    }
+  ],
+  "comparison": {
+    "historical_three": {
+      "fp": 5,
+      "protected_fp": 0,
+      "protected_n": 86,
+      "boundary_tp": 3214,
+      "boundary_n": 14127,
+      "detected": {
+        "mild_joint": 0,
+        "second_dominant": 0,
+        "sixth_dominant": 727,
+        "strong_joint": 3658
+      },
+      "per_profile_n": 11400,
+      "fpr": 0.0035087719298245615,
+      "protected_fpr": 0.0,
+      "boundary_rate": 0.22750760954201174,
+      "rates": {
+        "mild_joint": 0.0,
+        "second_dominant": 0.0,
+        "sixth_dominant": 0.06377192982456141,
+        "strong_joint": 0.32087719298245615
+      },
+      "selection_score": 0.16183494512188307,
+      "excess_fpr": 0.0
+    },
+    "second_exponential": {
+      "fp": 5,
+      "protected_fp": 0,
+      "protected_n": 86,
+      "boundary_tp": 2877,
+      "boundary_n": 14127,
+      "detected": {
+        "mild_joint": 0,
+        "second_dominant": 441,
+        "sixth_dominant": 129,
+        "strong_joint": 3569
+      },
+      "per_profile_n": 11400,
+      "fpr": 0.0035087719298245615,
+      "protected_fpr": 0.0,
+      "boundary_rate": 0.20365258016564025,
+      "rates": {
+        "mild_joint": 0.0,
+        "second_dominant": 0.038684210526315786,
+        "sixth_dominant": 0.011315789473684211,
+        "strong_joint": 0.3130701754385965
+      },
+      "selection_score": 0.1472100620126447,
+      "excess_fpr": 0.0
+    },
+    "second_gpd": {
+      "fp": 5,
+      "protected_fp": 0,
+      "protected_n": 86,
+      "boundary_tp": 2930,
+      "boundary_n": 14127,
+      "detected": {
+        "mild_joint": 0,
+        "second_dominant": 224,
+        "sixth_dominant": 215,
+        "strong_joint": 3603
+      },
+      "per_profile_n": 11400,
+      "fpr": 0.0035087719298245615,
+      "protected_fpr": 0.0,
+      "boundary_rate": 0.20740426134352657,
+      "rates": {
+        "mild_joint": 0.0,
+        "second_dominant": 0.019649122807017545,
+        "sixth_dominant": 0.018859649122807017,
+        "strong_joint": 0.31605263157894736
+      },
+      "selection_score": 0.14802230611035977,
+      "excess_fpr": 0.0
+    },
+    "both_gpd": {
+      "fp": 5,
+      "protected_fp": 0,
+      "protected_n": 86,
+      "boundary_tp": 2958,
+      "boundary_n": 14127,
+      "detected": {
+        "mild_joint": 0,
+        "second_dominant": 171,
+        "sixth_dominant": 236,
+        "strong_joint": 3600
+      },
+      "per_profile_n": 11400,
+      "fpr": 0.0035087719298245615,
+      "protected_fpr": 0.0,
+      "boundary_rate": 0.20938628158844766,
+      "rates": {
+        "mild_joint": 0.0,
+        "second_dominant": 0.015,
+        "sixth_dominant": 0.020701754385964912,
+        "strong_joint": 0.3157894736842105
+      },
+      "selection_score": 0.14862954430299574,
+      "excess_fpr": 0.0
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit": 855,
+      "calibration": 285,
+      "validation": 285,
+      "results": {
+        "historical_three": {
+          "threshold": 0.6918819260688978,
+          "fp": 0,
+          "protected_n": 15,
+          "protected_fp": 0,
+          "boundary_n": 2485,
+          "boundary_tp": 487,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 32,
+            "strong_joint": 576
+          }
+        },
+        "second_exponential": {
+          "threshold": 1.8283725948585303,
+          "fp": 0,
+          "protected_n": 15,
+          "protected_fp": 0,
+          "boundary_n": 2485,
+          "boundary_tp": 365,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 6,
+            "sixth_dominant": 0,
+            "strong_joint": 448
+          }
+        },
+        "second_gpd": {
+          "threshold": 1.300981723121293,
+          "fp": 0,
+          "protected_n": 15,
+          "protected_fp": 0,
+          "boundary_n": 2485,
+          "boundary_tp": 300,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 2,
+            "strong_joint": 401
+          }
+        },
+        "both_gpd": {
+          "threshold": 1.409854825944463,
+          "fp": 0,
+          "protected_n": 15,
+          "protected_fp": 0,
+          "boundary_n": 2485,
+          "boundary_tp": 288,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 2,
+            "strong_joint": 388
+          }
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "fit": 855,
+      "calibration": 285,
+      "validation": 285,
+      "results": {
+        "historical_three": {
+          "threshold": 0.739515434315926,
+          "fp": 3,
+          "protected_n": 23,
+          "protected_fp": 0,
+          "boundary_n": 3088,
+          "boundary_tp": 1046,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 367,
+            "strong_joint": 1152
+          }
+        },
+        "second_exponential": {
+          "threshold": 1.1539255412591114,
+          "fp": 4,
+          "protected_n": 23,
+          "protected_fp": 0,
+          "boundary_n": 3088,
+          "boundary_tp": 1615,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 304,
+            "sixth_dominant": 129,
+            "strong_joint": 1952
+          }
+        },
+        "second_gpd": {
+          "threshold": 0.9563050967407197,
+          "fp": 4,
+          "protected_n": 23,
+          "protected_fp": 0,
+          "boundary_n": 3088,
+          "boundary_tp": 1743,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 93,
+            "sixth_dominant": 213,
+            "strong_joint": 2019
+          }
+        },
+        "both_gpd": {
+          "threshold": 1.002890156260243,
+          "fp": 4,
+          "protected_n": 23,
+          "protected_fp": 0,
+          "boundary_n": 3088,
+          "boundary_tp": 1793,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 77,
+            "sixth_dominant": 234,
+            "strong_joint": 2052
+          }
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "fit": 855,
+      "calibration": 285,
+      "validation": 285,
+      "results": {
+        "historical_three": {
+          "threshold": 0.834722400757181,
+          "fp": 0,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2448,
+          "boundary_tp": 278,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 57,
+            "strong_joint": 363
+          }
+        },
+        "second_exponential": {
+          "threshold": 6.007281640605181,
+          "fp": 0,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2448,
+          "boundary_tp": 33,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 0,
+            "strong_joint": 52
+          }
+        },
+        "second_gpd": {
+          "threshold": 2.8189281458465354,
+          "fp": 0,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2448,
+          "boundary_tp": 23,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 0,
+            "strong_joint": 66
+          }
+        },
+        "both_gpd": {
+          "threshold": 3.21796173381313,
+          "fp": 0,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2448,
+          "boundary_tp": 23,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 0,
+            "strong_joint": 66
+          }
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "fit": 855,
+      "calibration": 285,
+      "validation": 285,
+      "results": {
+        "historical_three": {
+          "threshold": 0.7418939313463226,
+          "fp": 1,
+          "protected_n": 14,
+          "protected_fp": 0,
+          "boundary_n": 3418,
+          "boundary_tp": 971,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 74,
+            "strong_joint": 897
+          }
+        },
+        "second_exponential": {
+          "threshold": 3.383050076086058,
+          "fp": 0,
+          "protected_n": 14,
+          "protected_fp": 0,
+          "boundary_n": 3418,
+          "boundary_tp": 307,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 6,
+            "sixth_dominant": 0,
+            "strong_joint": 307
+          }
+        },
+        "second_gpd": {
+          "threshold": 3.383050076086058,
+          "fp": 0,
+          "protected_n": 14,
+          "protected_fp": 0,
+          "boundary_n": 3418,
+          "boundary_tp": 307,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 6,
+            "sixth_dominant": 0,
+            "strong_joint": 307
+          }
+        },
+        "both_gpd": {
+          "threshold": 3.4549145653232642,
+          "fp": 0,
+          "protected_n": 14,
+          "protected_fp": 0,
+          "boundary_n": 3418,
+          "boundary_tp": 306,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 4,
+            "sixth_dominant": 0,
+            "strong_joint": 306
+          }
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "fit": 855,
+      "calibration": 285,
+      "validation": 285,
+      "results": {
+        "historical_three": {
+          "threshold": 0.7538599070865712,
+          "fp": 1,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2688,
+          "boundary_tp": 432,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 0,
+            "sixth_dominant": 197,
+            "strong_joint": 670
+          }
+        },
+        "second_exponential": {
+          "threshold": 2.368987242825963,
+          "fp": 1,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2688,
+          "boundary_tp": 557,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 125,
+            "sixth_dominant": 0,
+            "strong_joint": 810
+          }
+        },
+        "second_gpd": {
+          "threshold": 2.368987242825963,
+          "fp": 1,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2688,
+          "boundary_tp": 557,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 125,
+            "sixth_dominant": 0,
+            "strong_joint": 810
+          }
+        },
+        "both_gpd": {
+          "threshold": 2.791050413491757,
+          "fp": 1,
+          "protected_n": 17,
+          "protected_fp": 0,
+          "boundary_n": 2688,
+          "boundary_tp": 548,
+          "simulated_detected": {
+            "mild_joint": 0,
+            "second_dominant": 90,
+            "sixth_dominant": 0,
+            "strong_joint": 788
+          }
+        }
+      }
+    }
+  ],
+  "model_sha256": "cd40eedddf660dc0ccba8f4f634270bd8d4c58a2ef13550131187acb6ae43561"
+}

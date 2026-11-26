@@ -1,0 +1,23 @@
+{
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "torch": "2.15.0",
+    "torchvision": "0.29.2",
+    "pillow": "13.0.0",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "total_seconds": 67.63389089999964,
+  "extraction_seconds": 46.144948600000134,
+  "threads": 4,
+  "batch_size": 8,
+  "features_sha256": "078cc57248404b8d3a263d7ea3001b4e5f5a5930c7407eb868d35a6472d212dc",
+  "predictions_sha256": "888e93de0943ae890b85cac583dcb20390ea7336793671c3e4cc3b6714707032",
+  "thyroid_train_duplicates": 57,
+  "thyroid_test_overlap": 56,
+  "used_bad_training_images": 100
+}

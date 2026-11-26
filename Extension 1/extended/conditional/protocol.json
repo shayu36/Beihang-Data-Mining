@@ -1,0 +1,17 @@
+{
+  "study": "Second round, six-feature normal conditional reference",
+  "primary_question": "Does local prediction of each feature from the other five improve detection of both directional and dependence-breaking perturbations on the normal training distribution?",
+  "data_access": "Only thyroid/train-set.csv until a single final candidate, score rule, threshold and model have been frozen. Existing semester test results informed the inherited directional pair and alpha. The course test is not an independent blind benchmark.",
+  "split": "Retain the first occurrence of each distinct normal record, reserve 20% with seed 42 as final normal calibration. Development: same three-fold KFold on the other 1425 as first-round challenge, shuffle seed 1126; for each fold, 25% from the other two folds are calibration (seed 800 + zero-based fold).",
+  "alpha": 0.005,
+  "transform": "Yeo-Johnson and median/Q10-Q90 fitted on a fold's fitting normals separately for all six attributes.",
+  "conditional_model": "For each column, select k=max(10,round(sqrt(n_fit))) nearest normal rows using the standardized other five columns. Compare target to conditional median, divide absolute residual by local Q90-Q10 with floor equal to 25% of normal global Q90-Q10. The mean of the two largest standardized residuals is the multivariate anomaly component. In-sample reference scores are leave-one-out.",
+  "normalization": "Divide positive product and conditional score by their respective 99.5th percentile on fitting normals. No calibration or validation rows participate in reference geometry or this scale. The three-column control has its own upper calibration threshold.",
+  "candidates": ["product", "corrected", "conditional", "mix_15", "mix_35", "mix_50", "max_50", "max_75", "max_100"],
+  "candidate_specs": "mix_x is (1-x/100)*scaled_product+(x/100)*scaled_conditional. max_x is max(scaled_product,(x/100)*scaled_conditional). product and corrected are inherited controls.",
+  "directional_scenarios": "Use the identical held-out normal rows, sampling order, seeds, marginal tail intervals, and directed-shift extents of balanced, second-dominant and sixth-dominant profiles in the first-round challenge.",
+  "non_directional_scenarios": "Pair shuffle: determine the strongest absolute Spearman pair within each fit partition (ties resolve in index order), then derange its lower-index column among held-out rows. All shuffle: derange all six columns separately among held-out rows. Neither regime imposes a signed shift, and both preserve each empirical feature marginal. Seeds 1526 and 1527 plus ten times zero-based fold.",
+  "selection": "Candidates must have pooled held-out normal FPR <= 1% and mean directional detection at least 90% of the held-out product directional detection. Among those select the highest equally weighted mean of the directional family mean and the dependence-breaking family mean. Ties resolve by listed order. If no candidate passes use the product reference. No test labels, IDs or scores enter selection.",
+  "evaluation": "Freeze the winning six-column estimator or inherited control and the final normal calibration threshold with model and source hashes. Score the test features once and save their scores and predictions; only then associate labels and compute the official metrics. No course-based reselection.",
+  "significance": "Sensitivity to injected artifacts does not estimate disease recall. Compare course metrics descriptively to archived controls."
+}

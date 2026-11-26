@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "model_sha256": "cd40eedddf660dc0ccba8f4f634270bd8d4c58a2ef13550131187acb6ae43561",
+  "scores_sha256": "0d8a89755bb148bd18569d0d046f3c7e7de86bac7100dbca58903a9328fb26d6",
+  "threshold": 2.001376362249395,
+  "checked": {
+    "n": 1933,
+    "tn": 1830,
+    "fp": 9,
+    "fn": 13,
+    "tp": 81,
+    "accuracy": 0.9886187273667874,
+    "precision": 0.9,
+    "recall": 0.8617021276595744,
+    "f1": 0.8804347826086957,
+    "auroc": 0.9945159834785324,
+    "ap": 0.9331265472360715
+  }
+}

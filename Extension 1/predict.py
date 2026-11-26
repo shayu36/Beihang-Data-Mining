@@ -42,7 +42,7 @@ def main():
             with Image.open(args.image) as image:
                 global_x, x = encoder.encode([image.convert("RGB")])
         result = model.predict(x) if domain == "thyroid" else model.predict(global_x, x)
-    answer = dict(domain=domain, method="improved", model_kind=payload["kind"],
+    answer = dict(domain=domain, method=payload.get("method", "improved"), model_kind=payload["kind"],
         score=float(result["score"][0]), threshold=model.threshold,
         prediction=int(result["prediction"][0]))
     if "p_normal" in result:

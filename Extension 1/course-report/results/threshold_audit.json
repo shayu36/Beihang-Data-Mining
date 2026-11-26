@@ -1,0 +1,85 @@
+{
+  "purpose": "Post-hoc diagnostics of a previously frozen score. None of the evaluated cut positions is exported or used in model fitting.",
+  "six_feature_consistency": {
+    "test_rows": 1933,
+    "unique_test_vectors": 1910,
+    "repeated_test_rows": 23,
+    "test_groups_with_both_labels": 0,
+    "test_rows_in_conflicting_groups": 0,
+    "min_errors_forced_by_identical_test_inputs": 0,
+    "test_normals_overlapping_normal_train": 56,
+    "test_diseased_overlapping_normal_train": 0
+  },
+  "monotonic_threshold_bounds": {
+    "decision": "higher score means anomalous",
+    "test_rows": 1933,
+    "distinct_scores": 735,
+    "distinct_decision_sets": 736,
+    "max_correct": [
+      {
+        "tn": 1835,
+        "fp": 4,
+        "fn": 2,
+        "tp": 92,
+        "correct": 1927,
+        "f1": 0.968421052631579,
+        "accuracy": 0.9968960165545784
+      },
+      {
+        "tn": 1834,
+        "fp": 5,
+        "fn": 1,
+        "tp": 93,
+        "correct": 1927,
+        "f1": 0.96875,
+        "accuracy": 0.9968960165545784
+      }
+    ],
+    "max_f1": [
+      {
+        "tn": 1834,
+        "fp": 5,
+        "fn": 1,
+        "tp": 93,
+        "correct": 1927,
+        "f1": 0.96875,
+        "accuracy": 0.9968960165545784
+      }
+    ]
+  },
+  "missed_disease": {
+    "sample": "test_row_1840",
+    "corrected_score": 0.02339963051223932,
+    "frozen_threshold": 0.8496630153698963,
+    "six_feature_empirical_percentiles": [
+      37.473684210526315,
+      72.35087719298245,
+      59.08771929824561,
+      32.91228070175439,
+      32.8421052631579,
+      39.438596491228076
+    ],
+    "normal_reference": "Six raw features, fit-only RobustScaler and robust MCD whitening, 5-nearest Euclidean distances divided by sqrt(6) and averaged",
+    "reference_count": 1425,
+    "calibration_count": 357,
+    "nearest_fit_row_ids_1based": [
+      1800,
+      1607,
+      1257,
+      544,
+      1566
+    ],
+    "five_distances_divided_by_sqrt6": [
+      0.16324178258799713,
+      0.21404213975788208,
+      0.22720270805389753,
+      0.29651413428215895,
+      0.31506177570480887
+    ],
+    "mean_distance": 0.2432125080773489,
+    "six_feature_threshold": 3.405370788479073,
+    "calibration_normal_count_at_or_below": 25,
+    "six_feature_normal_calibration_percentile": 7.002801120448179,
+    "six_feature_p_normal": 0.9301675977653632
+  }
+}

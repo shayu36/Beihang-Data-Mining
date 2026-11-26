@@ -1,0 +1,3 @@
+# Keep byte-verified experiment evidence and frozen-study sources identical on checkout.
+course-report/results/** -text whitespace=cr-at-eol
+extended/** -text whitespace=cr-at-eol

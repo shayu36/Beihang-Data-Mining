@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "historical_csv_sha256": "864e92ce053d4c065ea0571971c82ab165758abd706609b827d38c2a7d3a827f",
+  "archived_predictions_byte_identical": true,
+  "model_rows_checked": 1933,
+  "max_score_difference": 0.0,
+  "cli_samples": [
+    {
+      "sample": "test_row_1499",
+      "domain": "thyroid",
+      "method": "corrected",
+      "model_kind": "corrected_power_reference",
+      "score": 0.7929866631042322,
+      "threshold": 0.8496630153698963,
+      "prediction": 0,
+      "p_normal": 0.008379888268156424
+    },
+    {
+      "sample": "test_row_1922",
+      "domain": "thyroid",
+      "method": "corrected",
+      "model_kind": "corrected_power_reference",
+      "score": 1.7391389616729638,
+      "threshold": 0.8496630153698963,
+      "prediction": 1,
+      "p_normal": 0.002793296089385475
+    }
+  ]
+}

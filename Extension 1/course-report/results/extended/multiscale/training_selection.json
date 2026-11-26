@@ -1,0 +1,245 @@
+{
+  "winner": "multiscale_1",
+  "macro_proxy_ap": {
+    "single_5": 0.774528929424123,
+    "multiscale_0": 0.7692373137556747,
+    "multiscale_0.5": 0.78406819862952,
+    "multiscale_1": 0.7987795095124621
+  },
+  "fold_profile_ap": [
+    {
+      "domain": "hazelnut",
+      "fold": 1,
+      "inner_fit_count": 106,
+      "held_count": 54,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5345286201471849,
+        "multiscale_0": 0.5235722280249048,
+        "multiscale_0.5": 0.5356153762682271,
+        "multiscale_1": 0.5365063755031396
+      }
+    },
+    {
+      "domain": "hazelnut",
+      "fold": 1,
+      "inner_fit_count": 106,
+      "held_count": 54,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "hazelnut",
+      "fold": 2,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5300756535418203,
+        "multiscale_0": 0.5250912055384739,
+        "multiscale_0.5": 0.5332197507529837,
+        "multiscale_1": 0.5227546727229713
+      }
+    },
+    {
+      "domain": "hazelnut",
+      "fold": 2,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "hazelnut",
+      "fold": 3,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5381932193650447,
+        "multiscale_0": 0.5284757907650944,
+        "multiscale_0.5": 0.5423798374891485,
+        "multiscale_1": 0.5234069510016274
+      }
+    },
+    {
+      "domain": "hazelnut",
+      "fold": 3,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 1,
+      "inner_fit_count": 106,
+      "held_count": 54,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5057806709098237,
+        "multiscale_0": 0.504209642476768,
+        "multiscale_0.5": 0.5036124042871619,
+        "multiscale_1": 0.5163828281445252
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 1,
+      "inner_fit_count": 106,
+      "held_count": 54,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 2,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5046709141077326,
+        "multiscale_0": 0.5126619290512862,
+        "multiscale_0.5": 0.5181418849432864,
+        "multiscale_1": 0.5128969820486258
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 2,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 3,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.5209426124819274,
+        "multiscale_0": 0.5086713097136185,
+        "multiscale_0.5": 0.508996504421017,
+        "multiscale_1": 0.5146936930961571
+      }
+    },
+    {
+      "domain": "zipper",
+      "fold": 3,
+      "inner_fit_count": 107,
+      "held_count": 53,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9999999999999999,
+        "multiscale_0": 0.9999999999999999,
+        "multiscale_0.5": 0.9999999999999999,
+        "multiscale_1": 0.9999999999999999
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 1,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.6302651878856975,
+        "multiscale_0": 0.6131130300491502,
+        "multiscale_0.5": 0.6748247878756416,
+        "multiscale_1": 0.7585975542004492
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 1,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9676582327922051,
+        "multiscale_0": 0.9651715032662903,
+        "multiscale_0.5": 0.9739314651844163,
+        "multiscale_1": 0.9910585606525806
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 2,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.623094035381921,
+        "multiscale_0": 0.6061314268885343,
+        "multiscale_0.5": 0.6669199263468226,
+        "multiscale_1": 0.7619356872006137
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 2,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9716900740266744,
+        "multiscale_0": 0.9671808229114548,
+        "multiscale_0.5": 0.9896885031912239,
+        "multiscale_1": 0.9931474766493066
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 3,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "coordinate_swap",
+      "ap": {
+        "single_5": 0.6378103674794308,
+        "multiscale_0": 0.6198284277163386,
+        "multiscale_0.5": 0.6749516752896891,
+        "multiscale_1": 0.7536733502690722
+      }
+    },
+    {
+      "domain": "thyroid",
+      "fold": 3,
+      "inner_fit_count": 950,
+      "held_count": 475,
+      "profile": "sparse_shift",
+      "ap": {
+        "single_5": 0.9768111415147512,
+        "multiscale_0": 0.9721643312002284,
+        "multiscale_0.5": 0.9909454592817458,
+        "multiscale_1": 0.9929770397352505
+      }
+    }
+  ]
+}

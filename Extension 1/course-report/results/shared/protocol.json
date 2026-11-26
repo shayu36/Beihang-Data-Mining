@@ -1,0 +1,19 @@
+{
+  "settings": {
+    "metric": "standard",
+    "distance": "euclidean",
+    "reference_mode": "samples",
+    "k": 5,
+    "max_bank": 8192,
+    "top_fraction": 0.02,
+    "alpha": 0.05,
+    "seed": 42
+  },
+  "calibration_fraction": 0.2,
+  "archives_sha256": {
+    "images": "8eae56c3fed9bf45ce352b5576f9261de235c4143ed7402d02929714ec91b87a",
+    "thyroid": "154f0138392866c4e8c3a22bc4fb1dc7ab1788db439a5684d733a09d521d196f"
+  },
+  "features_sha256": "078cc57248404b8d3a263d7ea3001b4e5f5a5930c7407eb868d35a6472d212dc",
+  "rule": "p_normal <= 0.05, ties included in the upper-tail count"
+}

@@ -1,0 +1,27 @@
+{
+  "candidates": [
+    "single_5",
+    "multiscale_0",
+    "multiscale_0.5",
+    "multiscale_1"
+  ],
+  "local_powers": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "scales": [
+    5,
+    20
+  ],
+  "radius_floor_quantile": 0.1,
+  "alpha": 0.05,
+  "shared_top_fraction": 0.02,
+  "calibration_rule": "upper-tail normal rank <= 0.05",
+  "selection": "Highest arithmetic mean synthetic-vs-normal AP over 3 domains, 3 inner folds and 2 corruption profiles among multiscale candidates. Ties use smaller power.",
+  "inner_split": "3-fold with shuffle seed 2026, on original proper-fit normals only",
+  "profiles": "For each held-out bag select ceil(0.05 * bag length) random descriptors and ceil(sqrt(dimension)) random coordinates, shared across these descriptors. Swap coordinates for the same positions of a randomly sampled fit bag, or add a shared signed Uniform(1,2) * (Q90-Q10) shift computed from inner-fit data.",
+  "score": "For k in {5,20}, divide mean standardized neighbor distance by median training radius^(1-b) times local radius^b. Local radius is the mean leave-self-out radius of the k neighbors, floored at the tenth percentile of training radii. Use the geometric mean across k; average the top ceil(0.02*m) patch values.",
+  "script_sha256": "a75fca7912e703830e7b288236f0223c21c98b1dab32be8fe126c2414d234248",
+  "features_sha256": "078cc57248404b8d3a263d7ea3001b4e5f5a5930c7407eb868d35a6472d212dc"
+}

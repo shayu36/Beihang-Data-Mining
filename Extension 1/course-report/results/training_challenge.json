@@ -1,0 +1,548 @@
+{
+  "scope": "Training-only stress test. Synthetic detection rates do not estimate disease recall.",
+  "archive_member": "thyroid/train-set.csv",
+  "member_sha256": "dc037635fd43626fa57618b5c5635e86515d5647d5e22a943316d58dc9edf22e",
+  "test_features_read": false,
+  "test_labels_read": false,
+  "alpha": 0.005,
+  "historical_selection": "The two-column directions and alpha had been selected on the course test. The three-column correction was historically selected from 96 configurations using that test.",
+  "counts": {
+    "raw_normal": 1839,
+    "unique_normal": 1782,
+    "development_normal": 1425,
+    "unused_outer_normal_calibration": 357
+  },
+  "fold_protocol": "Outer calibration set aside with original seed 42. Split development normals into 3 held-out folds (KFold, seed 1126). Within each remaining two-thirds, reserve 25% for quantile calibration (seeds 800 + zero-based fold). Use strict score > normal calibration threshold for every method.",
+  "simulation_protocol": "For each held-out row, replace column 2 and column 6 by independent marginal quantile draws from the held-out normals, then add an independent one-sided uniform displacement measured in the column's Q90-Q10. Other four columns retain the corresponding row's values. Seeds: 900 + 10*zero-based fold + zero-based scenario. The tree learns from separately simulated inner-fit rows (seeds 200 + zero-based scenario).",
+  "profile_parameter_order": [
+    "quantile_lower",
+    "quantile_upper",
+    "maximum_shift_in_Q90_minus_Q10"
+  ],
+  "profiles": {
+    "balanced": [
+      [
+        0.85,
+        0.995,
+        0.75
+      ],
+      [
+        0.005,
+        0.15,
+        0.75
+      ]
+    ],
+    "second_dominant": [
+      [
+        0.95,
+        0.999,
+        2.0
+      ],
+      [
+        0.02,
+        0.25,
+        0.5
+      ]
+    ],
+    "sixth_dominant": [
+      [
+        0.75,
+        0.98,
+        0.5
+      ],
+      [
+        0.001,
+        0.05,
+        2.0
+      ]
+    ]
+  },
+  "criteria": "Highest pooled mean of the three simulated detection rates among five prespecified candidates with held-out normal FPR <= 1%. If none pass, highest rate overall. Ties use listed order.",
+  "candidate_specs": {
+    "product": "max(z2,0)*max(-z6,0); normal-fitted Yeo-Johnson and Q10-Q90 scaling",
+    "minor_coordinate": "min(z2,-z6) in the same normal-fitted coordinates",
+    "frontier_5": "5th-smallest one-sided Chebyshev distance to normal reference orthants",
+    "frontier_15": "15th-smallest one-sided Chebyshev distance to normal reference orthants",
+    "monotone_tree": "Monotonic histogram gradient boosting on (z2,-z6) with synthetic positives, 100 rounds, 7 leaves, min leaf=15, L2=2; total class weights balanced"
+  },
+  "candidate_order": [
+    "product",
+    "minor_coordinate",
+    "frontier_5",
+    "frontier_15",
+    "monotone_tree"
+  ],
+  "selected_among_five": "product",
+  "extra_diagnostic": {
+    "method": "corrected",
+    "score": "product / (1 + max(z3, 0))",
+    "available_for_selection": false,
+    "change_to_original_selection": false
+  },
+  "aggregate": {
+    "product": {
+      "n": 1425,
+      "false_positives": 6,
+      "normal_fpr": 0.004210526315789474,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 997,
+        "second_dominant": 703,
+        "sixth_dominant": 1253
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6996491228070175,
+        "second_dominant": 0.49333333333333335,
+        "sixth_dominant": 0.8792982456140351
+      },
+      "mean_simulated_detection_rate": 0.6907602339181286
+    },
+    "minor_coordinate": {
+      "n": 1425,
+      "false_positives": 3,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 270,
+        "second_dominant": 358,
+        "sixth_dominant": 130
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.18947368421052632,
+        "second_dominant": 0.2512280701754386,
+        "sixth_dominant": 0.0912280701754386
+      },
+      "mean_simulated_detection_rate": 0.17730994152046783
+    },
+    "frontier_5": {
+      "n": 1425,
+      "false_positives": 9,
+      "normal_fpr": 0.00631578947368421,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 843,
+        "second_dominant": 321,
+        "sixth_dominant": 1284
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.5915789473684211,
+        "second_dominant": 0.22526315789473683,
+        "sixth_dominant": 0.9010526315789473
+      },
+      "mean_simulated_detection_rate": 0.5726315789473685
+    },
+    "frontier_15": {
+      "n": 1425,
+      "false_positives": 9,
+      "normal_fpr": 0.00631578947368421,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 800,
+        "second_dominant": 321,
+        "sixth_dominant": 1277
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.5614035087719298,
+        "second_dominant": 0.22526315789473683,
+        "sixth_dominant": 0.896140350877193
+      },
+      "mean_simulated_detection_rate": 0.5609356725146198
+    },
+    "monotone_tree": {
+      "n": 1425,
+      "false_positives": 5,
+      "normal_fpr": 0.0035087719298245615,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 1031,
+        "second_dominant": 615,
+        "sixth_dominant": 1284
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.7235087719298245,
+        "second_dominant": 0.43157894736842106,
+        "sixth_dominant": 0.9010526315789473
+      },
+      "mean_simulated_detection_rate": 0.6853801169590644
+    },
+    "corrected": {
+      "n": 1425,
+      "false_positives": 4,
+      "normal_fpr": 0.002807017543859649,
+      "simulated_count_per_scenario": 1425,
+      "simulated_detected_counts": {
+        "balanced": 883,
+        "second_dominant": 564,
+        "sixth_dominant": 1194
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6196491228070176,
+        "second_dominant": 0.3957894736842105,
+        "sixth_dominant": 0.8378947368421052
+      },
+      "mean_simulated_detection_rate": 0.6177777777777778
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "method": "product",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.8493812928387754,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 305,
+        "second_dominant": 170,
+        "sixth_dominant": 408
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6421052631578947,
+        "second_dominant": 0.35789473684210527,
+        "sixth_dominant": 0.8589473684210527
+      }
+    },
+    {
+      "fold": 1,
+      "method": "minor_coordinate",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.8978927383208758,
+      "false_positives": 0,
+      "normal_fpr": 0.0,
+      "simulated_detected_counts": {
+        "balanced": 83,
+        "second_dominant": 160,
+        "sixth_dominant": 11
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.17473684210526316,
+        "second_dominant": 0.3368421052631579,
+        "sixth_dominant": 0.023157894736842106
+      }
+    },
+    {
+      "fold": 1,
+      "method": "frontier_5",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.35734419365864034,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 227,
+        "second_dominant": 60,
+        "sixth_dominant": 417
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.47789473684210526,
+        "second_dominant": 0.12631578947368421,
+        "sixth_dominant": 0.8778947368421053
+      }
+    },
+    {
+      "fold": 1,
+      "method": "frontier_15",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.5769185329839374,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 226,
+        "second_dominant": 44,
+        "sixth_dominant": 419
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.47578947368421054,
+        "second_dominant": 0.09263157894736843,
+        "sixth_dominant": 0.8821052631578947
+      }
+    },
+    {
+      "fold": 1,
+      "method": "monotone_tree",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 4.428549695515036,
+      "false_positives": 0,
+      "normal_fpr": 0.0,
+      "simulated_detected_counts": {
+        "balanced": 306,
+        "second_dominant": 101,
+        "sixth_dominant": 403
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6442105263157895,
+        "second_dominant": 0.21263157894736842,
+        "sixth_dominant": 0.848421052631579
+      }
+    },
+    {
+      "fold": 1,
+      "method": "corrected",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.8493812928387754,
+      "false_positives": 0,
+      "normal_fpr": 0.0,
+      "simulated_detected_counts": {
+        "balanced": 266,
+        "second_dominant": 123,
+        "sixth_dominant": 383
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.56,
+        "second_dominant": 0.25894736842105265,
+        "sixth_dominant": 0.8063157894736842
+      }
+    },
+    {
+      "fold": 2,
+      "method": "product",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.6225942177986273,
+      "false_positives": 4,
+      "normal_fpr": 0.008421052631578947,
+      "simulated_detected_counts": {
+        "balanced": 331,
+        "second_dominant": 251,
+        "sixth_dominant": 419
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6968421052631579,
+        "second_dominant": 0.5284210526315789,
+        "sixth_dominant": 0.8821052631578947
+      }
+    },
+    {
+      "fold": 2,
+      "method": "minor_coordinate",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.7738616921947246,
+      "false_positives": 2,
+      "normal_fpr": 0.004210526315789474,
+      "simulated_detected_counts": {
+        "balanced": 187,
+        "second_dominant": 195,
+        "sixth_dominant": 119
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.3936842105263158,
+        "second_dominant": 0.4105263157894737,
+        "sixth_dominant": 0.2505263157894737
+      }
+    },
+    {
+      "fold": 2,
+      "method": "frontier_5",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.3244333090087894,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 237,
+        "second_dominant": 31,
+        "sixth_dominant": 408
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.49894736842105264,
+        "second_dominant": 0.06526315789473684,
+        "sixth_dominant": 0.8589473684210527
+      }
+    },
+    {
+      "fold": 2,
+      "method": "frontier_15",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.5261442361802623,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 193,
+        "second_dominant": 20,
+        "sixth_dominant": 399
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.4063157894736842,
+        "second_dominant": 0.042105263157894736,
+        "sixth_dominant": 0.84
+      }
+    },
+    {
+      "fold": 2,
+      "method": "monotone_tree",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 2.5218678363615585,
+      "false_positives": 4,
+      "normal_fpr": 0.008421052631578947,
+      "simulated_detected_counts": {
+        "balanced": 337,
+        "second_dominant": 220,
+        "sixth_dominant": 428
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.7094736842105264,
+        "second_dominant": 0.4631578947368421,
+        "sixth_dominant": 0.9010526315789473
+      }
+    },
+    {
+      "fold": 2,
+      "method": "corrected",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.6225942177986273,
+      "false_positives": 4,
+      "normal_fpr": 0.008421052631578947,
+      "simulated_detected_counts": {
+        "balanced": 291,
+        "second_dominant": 205,
+        "sixth_dominant": 398
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6126315789473684,
+        "second_dominant": 0.43157894736842106,
+        "sixth_dominant": 0.8378947368421052
+      }
+    },
+    {
+      "fold": 3,
+      "method": "product",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.90964167695978,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 361,
+        "second_dominant": 282,
+        "sixth_dominant": 426
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.76,
+        "second_dominant": 0.5936842105263158,
+        "sixth_dominant": 0.8968421052631579
+      }
+    },
+    {
+      "fold": 3,
+      "method": "minor_coordinate",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.9093283437092939,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 0,
+        "second_dominant": 3,
+        "sixth_dominant": 0
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.0,
+        "second_dominant": 0.00631578947368421,
+        "sixth_dominant": 0.0
+      }
+    },
+    {
+      "fold": 3,
+      "method": "frontier_5",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.14813076410333714,
+      "false_positives": 7,
+      "normal_fpr": 0.014736842105263158,
+      "simulated_detected_counts": {
+        "balanced": 379,
+        "second_dominant": 230,
+        "sixth_dominant": 459
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.7978947368421052,
+        "second_dominant": 0.4842105263157895,
+        "sixth_dominant": 0.9663157894736842
+      }
+    },
+    {
+      "fold": 3,
+      "method": "frontier_15",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.37094579848147624,
+      "false_positives": 7,
+      "normal_fpr": 0.014736842105263158,
+      "simulated_detected_counts": {
+        "balanced": 381,
+        "second_dominant": 257,
+        "sixth_dominant": 459
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.8021052631578948,
+        "second_dominant": 0.5410526315789473,
+        "sixth_dominant": 0.9663157894736842
+      }
+    },
+    {
+      "fold": 3,
+      "method": "monotone_tree",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 4.005828171062978,
+      "false_positives": 1,
+      "normal_fpr": 0.002105263157894737,
+      "simulated_detected_counts": {
+        "balanced": 388,
+        "second_dominant": 294,
+        "sixth_dominant": 453
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.8168421052631579,
+        "second_dominant": 0.6189473684210526,
+        "sixth_dominant": 0.9536842105263158
+      }
+    },
+    {
+      "fold": 3,
+      "method": "corrected",
+      "fit_rows": 712,
+      "calibration_rows": 238,
+      "normal_validation_rows": 475,
+      "threshold": 0.8964148784553624,
+      "false_positives": 0,
+      "normal_fpr": 0.0,
+      "simulated_detected_counts": {
+        "balanced": 326,
+        "second_dominant": 236,
+        "sixth_dominant": 413
+      },
+      "simulated_detection_rates": {
+        "balanced": 0.6863157894736842,
+        "second_dominant": 0.4968421052631579,
+        "sixth_dominant": 0.8694736842105263
+      }
+    }
+  ]
+}

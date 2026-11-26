@@ -1,0 +1,16 @@
+{
+  "selected": "k256_prior256",
+  "n": 1933,
+  "tn": 1835,
+  "fp": 4,
+  "fn": 7,
+  "tp": 87,
+  "accuracy": 0.9943093636833937,
+  "precision": 0.9560439560439561,
+  "recall": 0.925531914893617,
+  "f1": 0.9405405405405406,
+  "auroc": 0.9958522786435737,
+  "average_precision": 0.9637685701361435,
+  "freeze_sha256": "2e641c2501db241e648ffc57e3fbd5736f65baa3b8a6887464f7c13c31ceb510",
+  "scores_before_labels_sha256": "4f264ec0e5ba1189a5907f026cf4df4a5c42c55ed6b555c4d9cab64fbcd0337a"
+}

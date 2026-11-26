@@ -1,0 +1,74 @@
+{
+  "candidates": [
+    "second_exponential",
+    "second_gpd",
+    "both_gpd"
+  ],
+  "comparator": "historical_three",
+  "alpha": 0.005,
+  "splice": "On each targeted directional axis use the previous Yeo-Johnson/robust coordinates up to normal Q90, then an exponential or nonnegative-shape GPD survival tail. Anchor continuously at Q90, scale log survival by (z(Q90)-z(Q80))/log(2). GPD shape from excess quartiles, shrunk toward 0 with 50 pseudo-observations and clipped to [0,.75]; scale matches the median positive excess. Preserve the three-feature product gate and third-column damping.",
+  "normal_protection": "At most 1% pooled held-out normal FPR and at most 2% FPR in prespecified one-sided tail normals: high F2 and above-median F6, or low F6 and below-median F2, using fit-only thresholds.",
+  "selection": "Choose one new candidate passing both protections by max of 0.5 * detection of near-boundary proxies + 0.5 * mean detection on four strengths; ties go to listed order. If none pass, minimize total excess over both FPR limits then maximize proxy performance. The old score is a comparator.",
+  "simulation": "From held-out normals sample a whole receiver by F6 quantile. Retain its five attributes other than F2 together; replace only F2 by an independent high-quantile donor, with random multiplier of the donor deviation from median. 8 draws per held-out row per profile. No clinical labels.",
+  "boundary": "Subset of all generated rows scoring between 0.6 and 1.4 times the historical three-column threshold obtained from each inner normal calibration split, inclusive. This measures behavior near an existing empirical operating point.",
+  "profiles": {
+    "mild_joint": [
+      [
+        0.06,
+        0.35
+      ],
+      [
+        0.78,
+        0.95
+      ],
+      [
+        1.0,
+        1.4
+      ]
+    ],
+    "second_dominant": [
+      [
+        0.12,
+        0.5
+      ],
+      [
+        0.93,
+        1.0
+      ],
+      [
+        1.3,
+        4.0
+      ]
+    ],
+    "sixth_dominant": [
+      [
+        0.0,
+        0.06
+      ],
+      [
+        0.75,
+        0.95
+      ],
+      [
+        1.0,
+        1.6
+      ]
+    ],
+    "strong_joint": [
+      [
+        0.0,
+        0.07
+      ],
+      [
+        0.92,
+        1.0
+      ],
+      [
+        1.4,
+        4.0
+      ]
+    ]
+  },
+  "splits": "Deduplicate normal train, hold aside its standard 357-row calibration (seed 42), fivefold over remaining 1425 (seed 112619), split inner pool into 75% fit and 25% calibration (seeds 5100+fold). Simulations use seeds 6100+10*fold+profile index.",
+  "reuse": "Historical identification of columns 2,3,6 and alpha depended on earlier course testing. This new comparison reads only the training member until after one candidate and its parameters are frozen."
+}

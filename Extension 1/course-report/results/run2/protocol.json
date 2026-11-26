@@ -1,0 +1,111 @@
+{
+  "config": {
+    "version": 4,
+    "seed": 42,
+    "calibration_fraction": 0.2,
+    "k": 5,
+    "max_bank": 8192,
+    "top_fraction": 0.02,
+    "image_size": 256,
+    "image_grid": 16,
+    "image_patch_dim": 64,
+    "projection_seed": 2026,
+    "image_metric": "standard",
+    "thyroid_metric": "mcd_whiten",
+    "mcd_support_fraction": 0.75,
+    "normal_image_alpha": 0.05,
+    "thyroid_alpha": 0.005,
+    "thyroid_normal_reference_alpha": 0.01,
+    "thyroid_sensitivity_alphas": [
+      0.01,
+      0.02,
+      0.05
+    ],
+    "baseline_alpha": 0.05,
+    "thyroid_ensemble_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "thyroid_subsample_fraction": 0.9,
+    "image_C_values": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "image_gamma_values": [
+      "scale",
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "image_svm_weights": [
+      0.5,
+      0.25,
+      0.75
+    ],
+    "image_cv_folds": 5,
+    "image_primary_parameters": {
+      "hazelnut": {
+        "C_values": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "gamma_values": [
+          "scale",
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "svm_weights": [
+          0.5,
+          0.25,
+          0.75
+        ]
+      },
+      "zipper": {
+        "C_values": [
+          10.0
+        ],
+        "gamma_values": [
+          0.0001
+        ],
+        "svm_weights": [
+          0.95
+        ]
+      }
+    },
+    "thyroid_features_1based": [
+      2,
+      6
+    ],
+    "thyroid_power_method": "yeo-johnson",
+    "thyroid_quantile_range": [
+      10.0,
+      90.0
+    ],
+    "thyroid_reference": "normal median product prototype",
+    "thyroid_distance": "manhattan",
+    "thyroid_score": "max(z2,0) * max(-z6,0)",
+    "image_supervision": "200 normal and 50 labelled abnormal training images per domain",
+    "thyroid_supervision": "normal training only, independent 357-row calibration",
+    "shared_core": "normal-fitted feature adapter, normal descriptor references, neighbor distance, upper-tail bag aggregation",
+    "image_threshold": "training OOF max-F1 empirical threshold, prediction >=; no conformal guarantee",
+    "thyroid_threshold": "normal calibration order statistic, strict >; alpha .005 selected during course development",
+    "test_labels_used_for_model_selection": true,
+    "test_labels_used_for_fitting": false,
+    "independent_test_available": false,
+    "evaluation_scope": "exploratory course-test selection of thyroid subspace/geometry and zipper hyperparameters; not a blind benchmark",
+    "statistical_scope": "fixed normal holdout rank / training OOF thresholds; adaptive course selection prevents a pipeline-level coverage claim"
+  },
+  "archives_sha256": {
+    "images": "8eae56c3fed9bf45ce352b5576f9261de235c4143ed7402d02929714ec91b87a",
+    "thyroid": "154f0138392866c4e8c3a22bc4fb1dc7ab1788db439a5684d733a09d521d196f"
+  },
+  "created_utc": "2026-11-09T08:43:03.699104+00:00"
+}

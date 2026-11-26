@@ -1,0 +1,293 @@
+{
+  "method": "median of five corrected fold score/threshold ratios",
+  "alpha": 0.005,
+  "decision": "strict score > 1",
+  "raw_normal_rows": 1839,
+  "unique_normal_rows": 1782,
+  "outer_validation": {
+    "single": {
+      "n_per_scenario": 1782,
+      "flagged": {
+        "normal": 6,
+        "balanced": 1044,
+        "second_dominant": 711,
+        "sixth_dominant": 1490
+      },
+      "rates": {
+        "normal": 0.003367003367003367,
+        "balanced": 0.5858585858585859,
+        "second_dominant": 0.398989898989899,
+        "sixth_dominant": 0.8361391694725028
+      },
+      "mean_synthetic_detection": 0.6069958847736626,
+      "minimum_fold_fpr": 0.0028011204481792717,
+      "maximum_fold_fpr": 0.0056179775280898875,
+      "fold_fpr_population_sd": 0.0011251746710964454
+    },
+    "crossfit": {
+      "n_per_scenario": 1782,
+      "flagged": {
+        "normal": 3,
+        "balanced": 1007,
+        "second_dominant": 648,
+        "sixth_dominant": 1460
+      },
+      "rates": {
+        "normal": 0.0016835016835016834,
+        "balanced": 0.5650953984287318,
+        "second_dominant": 0.36363636363636365,
+        "sixth_dominant": 0.819304152637486
+      },
+      "mean_synthetic_detection": 0.5826786382341939,
+      "minimum_fold_fpr": 0.0,
+      "maximum_fold_fpr": 0.0028089887640449437,
+      "fold_fpr_population_sd": 0.0013748359445014257
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "method": "single",
+      "n": 357,
+      "fit_available": 1425,
+      "raw_calibration_thresholds": [
+        0.8016993447670364
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 186,
+        "second_dominant": 150,
+        "sixth_dominant": 283
+      },
+      "rates": {
+        "normal": 0.0028011204481792717,
+        "balanced": 0.5210084033613446,
+        "second_dominant": 0.42016806722689076,
+        "sixth_dominant": 0.7927170868347339
+      }
+    },
+    {
+      "fold": 1,
+      "method": "crossfit",
+      "n": 357,
+      "fit_available": 1425,
+      "raw_calibration_thresholds": [
+        0.744541830892287,
+        2.1755649336791016,
+        0.7735135060843463,
+        0.865809915686285,
+        0.8175861923685179
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 202,
+        "second_dominant": 162,
+        "sixth_dominant": 286
+      },
+      "rates": {
+        "normal": 0.0028011204481792717,
+        "balanced": 0.5658263305322129,
+        "second_dominant": 0.453781512605042,
+        "sixth_dominant": 0.8011204481792717
+      }
+    },
+    {
+      "fold": 2,
+      "method": "single",
+      "n": 357,
+      "fit_available": 1425,
+      "raw_calibration_thresholds": [
+        0.6758595561771507
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 189,
+        "second_dominant": 126,
+        "sixth_dominant": 288
+      },
+      "rates": {
+        "normal": 0.0028011204481792717,
+        "balanced": 0.5294117647058824,
+        "second_dominant": 0.35294117647058826,
+        "sixth_dominant": 0.8067226890756303
+      }
+    },
+    {
+      "fold": 2,
+      "method": "crossfit",
+      "n": 357,
+      "fit_available": 1425,
+      "raw_calibration_thresholds": [
+        0.7432716221423705,
+        2.110359383396637,
+        0.7051245765099264,
+        0.8175541920889613,
+        0.7073757001891648
+      ],
+      "flagged": {
+        "normal": 0,
+        "balanced": 161,
+        "second_dominant": 88,
+        "sixth_dominant": 279
+      },
+      "rates": {
+        "normal": 0.0,
+        "balanced": 0.45098039215686275,
+        "second_dominant": 0.24649859943977592,
+        "sixth_dominant": 0.7815126050420168
+      }
+    },
+    {
+      "fold": 3,
+      "method": "single",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.8685190847446534
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 194,
+        "second_dominant": 126,
+        "sixth_dominant": 291
+      },
+      "rates": {
+        "normal": 0.0028089887640449437,
+        "balanced": 0.5449438202247191,
+        "second_dominant": 0.3539325842696629,
+        "sixth_dominant": 0.8174157303370787
+      }
+    },
+    {
+      "fold": 3,
+      "method": "crossfit",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.7899395360834132,
+        0.7584992353942773,
+        0.8303259298257258,
+        0.8398402863582175,
+        0.8223869199755487
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 203,
+        "second_dominant": 138,
+        "sixth_dominant": 294
+      },
+      "rates": {
+        "normal": 0.0028089887640449437,
+        "balanced": 0.5702247191011236,
+        "second_dominant": 0.38764044943820225,
+        "sixth_dominant": 0.8258426966292135
+      }
+    },
+    {
+      "fold": 4,
+      "method": "single",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.7993477457108629
+      ],
+      "flagged": {
+        "normal": 2,
+        "balanced": 237,
+        "second_dominant": 137,
+        "sixth_dominant": 322
+      },
+      "rates": {
+        "normal": 0.0056179775280898875,
+        "balanced": 0.6657303370786517,
+        "second_dominant": 0.3848314606741573,
+        "sixth_dominant": 0.9044943820224719
+      }
+    },
+    {
+      "fold": 4,
+      "method": "crossfit",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.7831562007864011,
+        0.8487586729719531,
+        1.9546227858955776,
+        0.8502967799251705,
+        0.6570033904763413
+      ],
+      "flagged": {
+        "normal": 0,
+        "balanced": 215,
+        "second_dominant": 113,
+        "sixth_dominant": 312
+      },
+      "rates": {
+        "normal": 0.0,
+        "balanced": 0.6039325842696629,
+        "second_dominant": 0.31741573033707865,
+        "sixth_dominant": 0.8764044943820225
+      }
+    },
+    {
+      "fold": 5,
+      "method": "single",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.7096438885424078
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 238,
+        "second_dominant": 172,
+        "sixth_dominant": 306
+      },
+      "rates": {
+        "normal": 0.0028089887640449437,
+        "balanced": 0.6685393258426966,
+        "second_dominant": 0.48314606741573035,
+        "sixth_dominant": 0.8595505617977528
+      }
+    },
+    {
+      "fold": 5,
+      "method": "crossfit",
+      "n": 356,
+      "fit_available": 1426,
+      "raw_calibration_thresholds": [
+        0.7773417458922707,
+        2.246433848986524,
+        0.6769161720364741,
+        0.7133038680159777,
+        0.8268580130831616
+      ],
+      "flagged": {
+        "normal": 1,
+        "balanced": 226,
+        "second_dominant": 147,
+        "sixth_dominant": 289
+      },
+      "rates": {
+        "normal": 0.0028089887640449437,
+        "balanced": 0.6348314606741573,
+        "second_dominant": 0.41292134831460675,
+        "sixth_dominant": 0.8117977528089888
+      }
+    }
+  ],
+  "final_fold_thresholds": [
+    0.692006920118698,
+    2.0749496630947397,
+    0.8558299227824684,
+    0.7674285016972124,
+    0.8962502299510182
+  ],
+  "model_sha256": "32569e1f7b4e2f0adac5a5b1e6ab84f2f41e7e4a719a87876e7d933a0213a387",
+  "source_sha256": {
+    "run_crossfit.py": "f5acefe7a0236e10dff27b37c3e50f65b85fa0951e7473d74700a8b92fd73942",
+    "crossfit_model.py": "da2161a70e60d811aeea57425577cc7c26d50e22650b1af1cad6678b9f5e9a72",
+    "protocol.json": "2ef1babbebfc802de6a46ef085bd497cb6c00498bc57ab0d9e16df5abab71a68"
+  },
+  "test_data_read": false
+}

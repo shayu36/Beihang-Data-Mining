@@ -1,0 +1,399 @@
+{
+  "protocol": {
+    "alpha": 0.005,
+    "seed": 20261126,
+    "folds": 5,
+    "new_candidates": [
+      "regularized_logistic",
+      "regularized_histogram"
+    ],
+    "reference_comparators": [
+      "historical_two",
+      "historical_three"
+    ],
+    "selection": "Among two learned candidates, prefer pooled held-out normal FPR <=1%; maximize equally weighted detection on all six proxy scenarios; ties favor logistic. If neither passes, lowest FPR then highest proxy detection. Historical scores reported separately.",
+    "perturbation": "All 5 coordinates other than column 2 are retained together from a real normal receiver, including correlated columns 4 and 6. Sample the low-sixth receiver from empirical Q05-Q25 (weak) or Q0-Q05 (strong); second-only selects a central Q25-Q75 receiver. Set column 2 from an independent Q80-Q96 or Q95-Q100 donor and scale its displacement from the normal median by Uniform[1,1.75] or [1.75,3.5]. For sixth-only use a neutral donor Q10-Q90 with no extrapolation. Thus sixth-only is a conditional tail recombination, not a lab-confirmed disease.",
+    "training": "Reserve original 357 normals for final calibration. On the other 1,425 use five normal validation folds. Re-split the rest 75/25 to fit/calibrate, generate training positives from fit rows and validation positives from held-out rows. Fit one transformer/scaler per inner fit. Seed schedules in train.py.",
+    "inherited_design": "Columns 2 and 6 directions and alpha came from previous course-test-informed work. This new comparison never uses test inputs for model or threshold choice."
+  },
+  "normal_training_member_sha256": "dc037635fd43626fa57618b5c5635e86515d5647d5e22a943316d58dc9edf22e",
+  "train_rows": 1839,
+  "dev": 1425,
+  "calibration_rows": 357,
+  "validation": {
+    "regularized_logistic": {
+      "fp": 6,
+      "detected": {
+        "second_only_weak": 0,
+        "second_only_strong": 0,
+        "sixth_only_weak": 0,
+        "sixth_only_strong": 100,
+        "joint_weak": 0,
+        "joint_strong": 405
+      },
+      "fpr": 0.004210526315789474,
+      "rates": {
+        "second_only_weak": 0.0,
+        "second_only_strong": 0.0,
+        "sixth_only_weak": 0.0,
+        "sixth_only_strong": 0.07017543859649122,
+        "joint_weak": 0.0,
+        "joint_strong": 0.28421052631578947
+      },
+      "mean_detection": 0.05906432748538012
+    },
+    "regularized_histogram": {
+      "fp": 6,
+      "detected": {
+        "second_only_weak": 0,
+        "second_only_strong": 345,
+        "sixth_only_weak": 0,
+        "sixth_only_strong": 0,
+        "joint_weak": 0,
+        "joint_strong": 457
+      },
+      "fpr": 0.004210526315789474,
+      "rates": {
+        "second_only_weak": 0.0,
+        "second_only_strong": 0.24210526315789474,
+        "sixth_only_weak": 0.0,
+        "sixth_only_strong": 0.0,
+        "joint_weak": 0.0,
+        "joint_strong": 0.32070175438596493
+      },
+      "mean_detection": 0.09380116959064327
+    },
+    "historical_two": {
+      "fp": 5,
+      "detected": {
+        "second_only_weak": 0,
+        "second_only_strong": 0,
+        "sixth_only_weak": 0,
+        "sixth_only_strong": 5,
+        "joint_weak": 0,
+        "joint_strong": 739
+      },
+      "fpr": 0.0035087719298245615,
+      "rates": {
+        "second_only_weak": 0.0,
+        "second_only_strong": 0.0,
+        "sixth_only_weak": 0.0,
+        "sixth_only_strong": 0.0035087719298245615,
+        "joint_weak": 0.0,
+        "joint_strong": 0.5185964912280702
+      },
+      "mean_detection": 0.08701754385964912
+    },
+    "historical_three": {
+      "fp": 7,
+      "detected": {
+        "second_only_weak": 0,
+        "second_only_strong": 0,
+        "sixth_only_weak": 0,
+        "sixth_only_strong": 5,
+        "joint_weak": 0,
+        "joint_strong": 702
+      },
+      "fpr": 0.004912280701754386,
+      "rates": {
+        "second_only_weak": 0.0,
+        "second_only_strong": 0.0,
+        "sixth_only_weak": 0.0,
+        "sixth_only_strong": 0.0035087719298245615,
+        "joint_weak": 0.0,
+        "joint_strong": 0.4926315789473684
+      },
+      "mean_detection": 0.08269005847953216
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "fit": 855,
+      "calibrate": 285,
+      "held_out": 285,
+      "metrics": {
+        "regularized_logistic": {
+          "threshold": 3.103311759152142,
+          "false_positives": 1,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 62
+          }
+        },
+        "regularized_histogram": {
+          "threshold": 2.740926074271589,
+          "false_positives": 3,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 144,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 202
+          }
+        },
+        "historical_two": {
+          "threshold": 0.6218507235135066,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 159
+          }
+        },
+        "historical_three": {
+          "threshold": 0.6218507235135066,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 127
+          }
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "fit": 855,
+      "calibrate": 285,
+      "held_out": 285,
+      "metrics": {
+        "regularized_logistic": {
+          "threshold": 2.829067127006852,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 6,
+            "joint_weak": 0,
+            "joint_strong": 115
+          }
+        },
+        "regularized_histogram": {
+          "threshold": 3.7070736783629648,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 8
+          }
+        },
+        "historical_two": {
+          "threshold": 0.7656463782659547,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 115
+          }
+        },
+        "historical_three": {
+          "threshold": 0.7656463782659547,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 69
+          }
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "fit": 855,
+      "calibrate": 285,
+      "held_out": 285,
+      "metrics": {
+        "regularized_logistic": {
+          "threshold": 2.8697356468634583,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 33,
+            "joint_weak": 0,
+            "joint_strong": 93
+          }
+        },
+        "regularized_histogram": {
+          "threshold": 2.8410131189140047,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 193,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 188
+          }
+        },
+        "historical_two": {
+          "threshold": 0.766487963651237,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 2,
+            "joint_weak": 0,
+            "joint_strong": 99
+          }
+        },
+        "historical_three": {
+          "threshold": 0.766487963651237,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 2,
+            "joint_weak": 0,
+            "joint_strong": 99
+          }
+        }
+      }
+    },
+    {
+      "fold": 4,
+      "fit": 855,
+      "calibrate": 285,
+      "held_out": 285,
+      "metrics": {
+        "regularized_logistic": {
+          "threshold": 3.291743812487349,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 45,
+            "joint_weak": 0,
+            "joint_strong": 117
+          }
+        },
+        "regularized_histogram": {
+          "threshold": 3.914048406298269,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 8,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 7
+          }
+        },
+        "historical_two": {
+          "threshold": 0.8803531771183638,
+          "false_positives": 0,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 3,
+            "joint_weak": 0,
+            "joint_strong": 152
+          }
+        },
+        "historical_three": {
+          "threshold": 0.7299093126612417,
+          "false_positives": 2,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 3,
+            "joint_weak": 0,
+            "joint_strong": 224
+          }
+        }
+      }
+    },
+    {
+      "fold": 5,
+      "fit": 855,
+      "calibrate": 285,
+      "held_out": 285,
+      "metrics": {
+        "regularized_logistic": {
+          "threshold": 5.587240849955289,
+          "false_positives": 1,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 16,
+            "joint_weak": 0,
+            "joint_strong": 18
+          }
+        },
+        "regularized_histogram": {
+          "threshold": 3.719874178906194,
+          "false_positives": 1,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 52
+          }
+        },
+        "historical_two": {
+          "threshold": 0.7669662268402793,
+          "false_positives": 3,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 214
+          }
+        },
+        "historical_three": {
+          "threshold": 0.7563437149822616,
+          "false_positives": 3,
+          "detected": {
+            "second_only_weak": 0,
+            "second_only_strong": 0,
+            "sixth_only_weak": 0,
+            "sixth_only_strong": 0,
+            "joint_weak": 0,
+            "joint_strong": 183
+          }
+        }
+      }
+    }
+  ],
+  "eligible": [
+    "regularized_logistic",
+    "regularized_histogram"
+  ],
+  "selected": "regularized_histogram",
+  "threshold": 3.342168765404385,
+  "model_sha256": "2fcbe0b4459f514f37f5288cfe188ef8c55e968ac9655182b0525b05bd67b118",
+  "test_member_read": false
+}

@@ -1,0 +1,78 @@
+{
+  "selection": "Per domain, among correctly detected anomalies choose the smallest fused score minus threshold; break ties by sample path. Illustration after evaluation.",
+  "interpretation": "Each cell is a normal-reference distance from the fitted local branch. The fusion also uses a global SVM. No pixel-level masks are used.",
+  "display": {
+    "origin": "top left",
+    "grid_order": "row-major",
+    "interpolation": "nearest",
+    "shared_color_limits": [
+      0,
+      1.3
+    ],
+    "figure_inches": [
+      7.2,
+      2.3
+    ],
+    "dpi": 240
+  },
+  "cases": [
+    {
+      "domain": "hazelnut",
+      "sample": "Image_Anomaly_Detection/hazelnut/test/004.png",
+      "true_positive_candidates": 15,
+      "score": 2.54507714735366,
+      "threshold": 2.0898627671969403,
+      "margin": 0.45521438015671967,
+      "svm_weight": 0.5,
+      "image_width_height": [
+        1024,
+        1024
+      ],
+      "patch_grid_rows_columns": [
+        16,
+        16
+      ],
+      "grid_peak_row_col_zero_based": [
+        6,
+        3
+      ],
+      "patch_distance_min": 0.22551025267923816,
+      "patch_distance_max": 1.2497303071366017,
+      "top_patch_count": 6,
+      "local_branch_score": 1.1668211624602767,
+      "max_raw_feature_difference": {
+        "global": 0.0,
+        "local": 6.854534149169922e-07
+      }
+    },
+    {
+      "domain": "zipper",
+      "sample": "Image_Anomaly_Detection/zipper/test/021.png",
+      "true_positive_candidates": 15,
+      "score": 2.139972152059789,
+      "threshold": 1.7346088305385357,
+      "margin": 0.4053633215212533,
+      "svm_weight": 0.95,
+      "image_width_height": [
+        1024,
+        1024
+      ],
+      "patch_grid_rows_columns": [
+        16,
+        16
+      ],
+      "grid_peak_row_col_zero_based": [
+        13,
+        7
+      ],
+      "patch_distance_min": 0.2080048641949744,
+      "patch_distance_max": 0.8083346237952348,
+      "top_patch_count": 6,
+      "local_branch_score": 0.7702858672303273,
+      "max_raw_feature_difference": {
+        "global": 0.0,
+        "local": 7.450580596923828e-07
+      }
+    }
+  ]
+}

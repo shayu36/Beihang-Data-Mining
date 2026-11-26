@@ -1,0 +1,17 @@
+{
+  "alpha": 0.005,
+  "seed": 20261126,
+  "folds": 5,
+  "new_candidates": [
+    "regularized_logistic",
+    "regularized_histogram"
+  ],
+  "reference_comparators": [
+    "historical_two",
+    "historical_three"
+  ],
+  "selection": "Among two learned candidates, prefer pooled held-out normal FPR <=1%; maximize equally weighted detection on all six proxy scenarios; ties favor logistic. If neither passes, lowest FPR then highest proxy detection. Historical scores reported separately.",
+  "perturbation": "All 5 coordinates other than column 2 are retained together from a real normal receiver, including correlated columns 4 and 6. Sample the low-sixth receiver from empirical Q05-Q25 (weak) or Q0-Q05 (strong); second-only selects a central Q25-Q75 receiver. Set column 2 from an independent Q80-Q96 or Q95-Q100 donor and scale its displacement from the normal median by Uniform[1,1.75] or [1.75,3.5]. For sixth-only use a neutral donor Q10-Q90 with no extrapolation. Thus sixth-only is a conditional tail recombination, not a lab-confirmed disease.",
+  "training": "Reserve original 357 normals for final calibration. On the other 1,425 use five normal validation folds. Re-split the rest 75/25 to fit/calibrate, generate training positives from fit rows and validation positives from held-out rows. Fit one transformer/scaler per inner fit. Seed schedules in train.py.",
+  "inherited_design": "Columns 2 and 6 directions and alpha came from previous course-test-informed work. This new comparison never uses test inputs for model or threshold choice."
+}

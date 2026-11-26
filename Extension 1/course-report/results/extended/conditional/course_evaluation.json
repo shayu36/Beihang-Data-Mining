@@ -1,0 +1,16 @@
+{
+  "method": "mix_50",
+  "n": 1933,
+  "tn": 1829,
+  "fp": 10,
+  "fn": 5,
+  "tp": 89,
+  "accuracy": 0.992240041386446,
+  "precision": 0.898989898989899,
+  "recall": 0.9468085106382979,
+  "f1": 0.9222797927461139,
+  "auroc": 0.9915136579778556,
+  "average_precision": 0.9544557747968294,
+  "frozen_sha256": "8a10c35ae37642553c4d67a1ef18fb2bb1e0557d08a8d4e856a288e7b9c051b8",
+  "scores_before_labels_sha256": "db3b3e81d1b3178993b3687c40f5b43d4681375e1d22e5435bc2f2f898e958ef"
+}

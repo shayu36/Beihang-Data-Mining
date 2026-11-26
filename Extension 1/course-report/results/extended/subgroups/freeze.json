@@ -1,0 +1,540 @@
+{
+  "selected": "k256_prior256",
+  "eligible": [
+    "k128_prior256",
+    "k256_prior256",
+    "k256_prior512"
+  ],
+  "summary": {
+    "control": {
+      "n": {
+        "normal": 1425,
+        "mild": 1425,
+        "stronger": 1425
+      },
+      "detected": {
+        "normal": 4,
+        "mild": 254,
+        "stronger": 533
+      },
+      "near_n": {
+        "mild": 415,
+        "stronger": 505
+      },
+      "near_detected": {
+        "mild": 138,
+        "stronger": 196
+      },
+      "rates": {
+        "normal": 0.002807017543859649,
+        "mild": 0.1782456140350877,
+        "stronger": 0.3740350877192982
+      },
+      "near_rates": {
+        "mild": 0.3325301204819277,
+        "stronger": 0.38811881188118813
+      },
+      "mean_simulated": 0.27614035087719296
+    },
+    "k128_prior256": {
+      "n": {
+        "normal": 1425,
+        "mild": 1425,
+        "stronger": 1425
+      },
+      "detected": {
+        "normal": 4,
+        "mild": 248,
+        "stronger": 519
+      },
+      "near_n": {
+        "mild": 415,
+        "stronger": 505
+      },
+      "near_detected": {
+        "mild": 132,
+        "stronger": 182
+      },
+      "rates": {
+        "normal": 0.002807017543859649,
+        "mild": 0.17403508771929824,
+        "stronger": 0.3642105263157895
+      },
+      "near_rates": {
+        "mild": 0.3180722891566265,
+        "stronger": 0.3603960396039604
+      },
+      "mean_simulated": 0.2691228070175439
+    },
+    "k256_prior256": {
+      "n": {
+        "normal": 1425,
+        "mild": 1425,
+        "stronger": 1425
+      },
+      "detected": {
+        "normal": 4,
+        "mild": 256,
+        "stronger": 538
+      },
+      "near_n": {
+        "mild": 415,
+        "stronger": 505
+      },
+      "near_detected": {
+        "mild": 140,
+        "stronger": 201
+      },
+      "rates": {
+        "normal": 0.002807017543859649,
+        "mild": 0.17964912280701753,
+        "stronger": 0.3775438596491228
+      },
+      "near_rates": {
+        "mild": 0.3373493975903614,
+        "stronger": 0.39801980198019804
+      },
+      "mean_simulated": 0.2785964912280702
+    },
+    "k256_prior512": {
+      "n": {
+        "normal": 1425,
+        "mild": 1425,
+        "stronger": 1425
+      },
+      "detected": {
+        "normal": 4,
+        "mild": 258,
+        "stronger": 535
+      },
+      "near_n": {
+        "mild": 415,
+        "stronger": 505
+      },
+      "near_detected": {
+        "mild": 142,
+        "stronger": 198
+      },
+      "rates": {
+        "normal": 0.002807017543859649,
+        "mild": 0.18105263157894738,
+        "stronger": 0.37543859649122807
+      },
+      "near_rates": {
+        "mild": 0.3421686746987952,
+        "stronger": 0.3920792079207921
+      },
+      "mean_simulated": 0.27824561403508774
+    }
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "config": "control",
+      "threshold": 0.8493812928387754,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 0,
+        "mild": 69,
+        "stronger": 162
+      },
+      "near_n": {
+        "mild": 138,
+        "stronger": 157
+      },
+      "near_detected": {
+        "mild": 42,
+        "stronger": 60
+      },
+      "normal_multiplier_quantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "fold": 1,
+      "config": "k128_prior256",
+      "threshold": 0.8844484670552467,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 0,
+        "mild": 69,
+        "stronger": 158
+      },
+      "near_n": {
+        "mild": 138,
+        "stronger": 157
+      },
+      "near_detected": {
+        "mild": 42,
+        "stronger": 56
+      },
+      "normal_multiplier_quantiles": [
+        0.5691225886011821,
+        0.98528622442569,
+        1.0353360703065977,
+        1.0600717570115132,
+        1.236070925540883
+      ]
+    },
+    {
+      "fold": 1,
+      "config": "k256_prior256",
+      "threshold": 0.8227413890825138,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 1,
+        "mild": 78,
+        "stronger": 168
+      },
+      "near_n": {
+        "mild": 138,
+        "stronger": 157
+      },
+      "near_detected": {
+        "mild": 51,
+        "stronger": 66
+      },
+      "normal_multiplier_quantiles": [
+        0.9518060527951844,
+        0.9754423028903958,
+        1.047505908823849,
+        1.054187667863581,
+        1.0718070270724038
+      ]
+    },
+    {
+      "fold": 1,
+      "config": "k256_prior512",
+      "threshold": 0.8314943139282343,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 1,
+        "mild": 76,
+        "stronger": 165
+      },
+      "near_n": {
+        "mild": 138,
+        "stronger": 157
+      },
+      "near_detected": {
+        "mild": 49,
+        "stronger": 63
+      },
+      "normal_multiplier_quantiles": [
+        0.9674180812359522,
+        0.9835434972846704,
+        1.0310525605456924,
+        1.0353544570795277,
+        1.046612546992491
+      ]
+    },
+    {
+      "fold": 2,
+      "config": "control",
+      "threshold": 0.6225942177986273,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 4,
+        "mild": 95,
+        "stronger": 180
+      },
+      "near_n": {
+        "mild": 121,
+        "stronger": 163
+      },
+      "near_detected": {
+        "mild": 44,
+        "stronger": 65
+      },
+      "normal_multiplier_quantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "fold": 2,
+      "config": "k128_prior256",
+      "threshold": 0.6784322194215157,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 3,
+        "mild": 86,
+        "stronger": 168
+      },
+      "near_n": {
+        "mild": 121,
+        "stronger": 163
+      },
+      "near_detected": {
+        "mild": 35,
+        "stronger": 53
+      },
+      "normal_multiplier_quantiles": [
+        0.9433899862699477,
+        0.9771264857472584,
+        1.0,
+        1.062944275026129,
+        1.2327776033042548
+      ]
+    },
+    {
+      "fold": 2,
+      "config": "k256_prior256",
+      "threshold": 0.6479845112480555,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 3,
+        "mild": 91,
+        "stronger": 177
+      },
+      "near_n": {
+        "mild": 121,
+        "stronger": 163
+      },
+      "near_detected": {
+        "mild": 40,
+        "stronger": 62
+      },
+      "normal_multiplier_quantiles": [
+        0.9630052863837977,
+        0.9658725869874579,
+        0.9927335032971863,
+        1.040748044961084,
+        1.1854075441764194
+      ]
+    },
+    {
+      "fold": 2,
+      "config": "k256_prior512",
+      "threshold": 0.6392371951798014,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 3,
+        "mild": 94,
+        "stronger": 177
+      },
+      "near_n": {
+        "mild": 121,
+        "stronger": 163
+      },
+      "near_detected": {
+        "mild": 43,
+        "stronger": 62
+      },
+      "normal_multiplier_quantiles": [
+        0.9751057305787149,
+        0.9770677797445533,
+        0.9951594175951397,
+        1.0267029643651426,
+        1.1160607760412955
+      ]
+    },
+    {
+      "fold": 3,
+      "config": "control",
+      "threshold": 0.8964148784553624,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 0,
+        "mild": 90,
+        "stronger": 191
+      },
+      "near_n": {
+        "mild": 156,
+        "stronger": 185
+      },
+      "near_detected": {
+        "mild": 52,
+        "stronger": 71
+      },
+      "normal_multiplier_quantiles": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "fold": 3,
+      "config": "k128_prior256",
+      "threshold": 0.9000813025353623,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 1,
+        "mild": 93,
+        "stronger": 193
+      },
+      "near_n": {
+        "mild": 156,
+        "stronger": 185
+      },
+      "near_detected": {
+        "mild": 55,
+        "stronger": 73
+      },
+      "normal_multiplier_quantiles": [
+        0.8753066035874498,
+        0.9591637227747818,
+        1.0124702352519759,
+        1.04547841744143,
+        1.2109857033206213
+      ]
+    },
+    {
+      "fold": 3,
+      "config": "k256_prior256",
+      "threshold": 0.8964148784553624,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 0,
+        "mild": 87,
+        "stronger": 193
+      },
+      "near_n": {
+        "mild": 156,
+        "stronger": 185
+      },
+      "near_detected": {
+        "mild": 49,
+        "stronger": 73
+      },
+      "normal_multiplier_quantiles": [
+        0.9189960321659105,
+        0.9999999999999998,
+        1.0000000000000002,
+        1.030157212178494,
+        1.0702383634435517
+      ]
+    },
+    {
+      "fold": 3,
+      "config": "k256_prior512",
+      "threshold": 0.8964148784553624,
+      "fit_n": 712,
+      "calibration_n": 238,
+      "n": {
+        "normal": 475,
+        "mild": 475,
+        "stronger": 475
+      },
+      "detected": {
+        "normal": 0,
+        "mild": 88,
+        "stronger": 193
+      },
+      "near_n": {
+        "mild": 156,
+        "stronger": 185
+      },
+      "near_detected": {
+        "mild": 50,
+        "stronger": 73
+      },
+      "normal_multiplier_quantiles": [
+        0.9446589152778085,
+        0.9999999999999998,
+        1.0,
+        1.019835077663362,
+        1.0456287416390533
+      ]
+    }
+  ],
+  "threshold": 0.8904187692180813,
+  "global_q99": 0.6443903364791549,
+  "fit_n": 1425,
+  "calibration_n": 357,
+  "k": 256,
+  "prior": 256,
+  "background_columns_1based": [
+    1,
+    5
+  ],
+  "model_sha256": "575632182255bd30abe8758394dc7cda986ca2019efae6f9ee093cbbcf6f2437",
+  "calibration_multiplier_5number": [
+    0.9076791534030704,
+    0.9536555049782839,
+    1.0194863850667992,
+    1.0705149853216167,
+    1.2343009960894165
+  ],
+  "source_sha256": {
+    "protocol.json": "b931f515bd6d4086335c9d63d6c71cd71dc62e086ed70fc5f5b0023b8f56e309",
+    "subgroup_model.py": "1f440b22b95224c31301f8b83d453fb94e90ec076bfcb8b57e1f866f1ef7067c",
+    "run_subgroup.py": "cccb50fb3002e534de5de5fe8ff862b82e49c0550d9ea134e04167e4d8ec704f"
+  },
+  "test_data_accessed": false
+}

@@ -86,3 +86,27 @@ class PowerPrototypeReference:
             alpha=self.alpha, threshold_rule="normal calibration order statistic; strict score > threshold",
             fitting_labels_used=False, calibration_labels_used=False,
             development_selection="Feature pair, transformation, directions, product geometry and alpha selected on previously inspected course tests; not a fresh blind benchmark")
+
+
+class CorrectedPowerReference(PowerPrototypeReference):
+    """Frozen three-feature candidate from the historical comparison of 96 configurations."""
+
+    def __init__(self, alpha=.005):
+        super().__init__(alpha=alpha)
+        self.features = (1, 2, 5)
+
+    def transform(self, rows):
+        z2, z3, z6 = self.standardized_coordinates(rows).T
+        base = np.maximum(z2, 0.) * np.maximum(-z6, 0.)
+        return (base / (1. + np.maximum(z3, 0.)))[:, None]
+
+    @property
+    def selection(self):
+        details = super().selection
+        del details["directions"]
+        details.update(
+            method="corrected_power_reference",
+            descriptor="max(z2, 0) * max(-z6, 0) / (1 + max(z3, 0))",
+            development_selection="Correction selected using the course test among 96 candidate configurations",
+        )
+        return details

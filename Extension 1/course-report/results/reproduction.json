@@ -1,0 +1,586 @@
+{
+  "status": "passed",
+  "version": 4,
+  "python": "3.12.14",
+  "config": {
+    "version": 4,
+    "seed": 42,
+    "calibration_fraction": 0.2,
+    "k": 5,
+    "max_bank": 8192,
+    "top_fraction": 0.02,
+    "image_size": 256,
+    "image_grid": 16,
+    "image_patch_dim": 64,
+    "projection_seed": 2026,
+    "image_metric": "standard",
+    "thyroid_metric": "mcd_whiten",
+    "mcd_support_fraction": 0.75,
+    "normal_image_alpha": 0.05,
+    "thyroid_alpha": 0.005,
+    "thyroid_normal_reference_alpha": 0.01,
+    "thyroid_sensitivity_alphas": [
+      0.01,
+      0.02,
+      0.05
+    ],
+    "baseline_alpha": 0.05,
+    "thyroid_ensemble_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "thyroid_subsample_fraction": 0.9,
+    "image_C_values": [
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "image_gamma_values": [
+      "scale",
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "image_svm_weights": [
+      0.5,
+      0.25,
+      0.75
+    ],
+    "image_cv_folds": 5,
+    "image_primary_parameters": {
+      "hazelnut": {
+        "C_values": [
+          0.1,
+          1.0,
+          10.0,
+          100.0
+        ],
+        "gamma_values": [
+          "scale",
+          0.0001,
+          0.001,
+          0.01
+        ],
+        "svm_weights": [
+          0.5,
+          0.25,
+          0.75
+        ]
+      },
+      "zipper": {
+        "C_values": [
+          10.0
+        ],
+        "gamma_values": [
+          0.0001
+        ],
+        "svm_weights": [
+          0.95
+        ]
+      }
+    },
+    "thyroid_features_1based": [
+      2,
+      6
+    ],
+    "thyroid_power_method": "yeo-johnson",
+    "thyroid_quantile_range": [
+      10.0,
+      90.0
+    ],
+    "thyroid_reference": "normal median product prototype",
+    "thyroid_distance": "manhattan",
+    "thyroid_score": "max(z2,0) * max(-z6,0)",
+    "image_supervision": "200 normal and 50 labelled abnormal training images per domain",
+    "thyroid_supervision": "normal training only, independent 357-row calibration",
+    "shared_core": "normal-fitted feature adapter, normal descriptor references, neighbor distance, upper-tail bag aggregation",
+    "image_threshold": "training OOF max-F1 empirical threshold, prediction >=; no conformal guarantee",
+    "thyroid_threshold": "normal calibration order statistic, strict >; alpha .005 selected during course development",
+    "test_labels_used_for_model_selection": true,
+    "test_labels_used_for_fitting": false,
+    "independent_test_available": false,
+    "evaluation_scope": "exploratory course-test selection of thyroid subspace/geometry and zipper hyperparameters; not a blind benchmark",
+    "statistical_scope": "fixed normal holdout rank / training OOF thresholds; adaptive course selection prevents a pipeline-level coverage claim"
+  },
+  "archives_sha256": {
+    "images": "8eae56c3fed9bf45ce352b5576f9261de235c4143ed7402d02929714ec91b87a",
+    "thyroid": "154f0138392866c4e8c3a22bc4fb1dc7ab1788db439a5684d733a09d521d196f"
+  },
+  "weights_sha256": "8b35a3a94717bfdd297d31c6bc8e33421b88bb7db8c626ec2bb4e8ffafa27f3a",
+  "projection_sha256": "21c6c0d514337b564c40de7ff39eec2b9b74a51415e12a64aceace462e68cf66",
+  "domains": {
+    "hazelnut": {
+      "kind": "supervised_reference",
+      "normal_fit": 160,
+      "normal_calibration": 40,
+      "normal_bank_owners_are_fit_only": true,
+      "normal_reference_vectors": 8192,
+      "normal_reference_distance_audit": {
+        "descriptors_checked": 64,
+        "max_numpy_distance_error": 1.1102230246251565e-15,
+        "top_descriptor_count": 6
+      },
+      "primary_reconstruction": {
+        "svm_candidates_retrained": 16,
+        "svm_folds_retrained": 80,
+        "local_folds_reconstructed": 5,
+        "validation_owners_excluded": true,
+        "final_normal_bank_images": 200,
+        "labelled_training_images": 250,
+        "svm_selected_id": 9,
+        "fusion_selected_id": 0,
+        "normalization_reconstructed": true,
+        "final_local_distance_audit": {
+          "descriptors_checked": 64,
+          "max_numpy_distance_error": 6.106226635438361e-16,
+          "top_descriptor_count": 6
+        },
+        "fold_distance_audits": [
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 5.551115123125783e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.27675647831893e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.1657341758564144e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 5.551115123125783e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 3.3306690738754696e-16,
+            "top_descriptor_count": 6
+          }
+        ]
+      },
+      "previous_v3_reconstruction": {
+        "svm_candidates_retrained": 16,
+        "svm_folds_retrained": 80,
+        "local_folds_reconstructed": 5,
+        "validation_owners_excluded": true,
+        "final_normal_bank_images": 200,
+        "labelled_training_images": 250,
+        "svm_selected_id": 9,
+        "fusion_selected_id": 0,
+        "normalization_reconstructed": true,
+        "final_local_distance_audit": {
+          "descriptors_checked": 64,
+          "max_numpy_distance_error": 6.106226635438361e-16,
+          "top_descriptor_count": 6
+        },
+        "fold_distance_audits": [
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 5.551115123125783e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.27675647831893e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.1657341758564144e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 5.551115123125783e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 3.3306690738754696e-16,
+            "top_descriptor_count": 6
+          }
+        ],
+        "reuses_primary_verified_object": true
+      },
+      "methods": {
+        "baseline": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 1.1895094718812151,
+          "normal_p_value_available": true,
+          "predictions_checked": 55,
+          "max_score_error": 6.661338147750939e-16
+        },
+        "normal_reference": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 1.148646001161574,
+          "normal_p_value_available": true,
+          "predictions_checked": 55,
+          "max_score_error": 1.1102230246251565e-16
+        },
+        "improved": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": 2.0898627671969403,
+          "normal_p_value_available": false,
+          "predictions_checked": 55,
+          "max_score_error": 0.0
+        },
+        "supervised_only": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": -0.24109045174975224,
+          "normal_p_value_available": false,
+          "predictions_checked": 55,
+          "max_score_error": 0.0
+        },
+        "previous_v3": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": 2.0898627671969403,
+          "normal_p_value_available": false,
+          "predictions_checked": 55,
+          "max_score_error": 0.0
+        }
+      }
+    },
+    "zipper": {
+      "kind": "supervised_reference",
+      "normal_fit": 160,
+      "normal_calibration": 40,
+      "normal_bank_owners_are_fit_only": true,
+      "normal_reference_vectors": 8192,
+      "normal_reference_distance_audit": {
+        "descriptors_checked": 64,
+        "max_numpy_distance_error": 1.3877787807814457e-15,
+        "top_descriptor_count": 6
+      },
+      "primary_reconstruction": {
+        "svm_candidates_retrained": 1,
+        "svm_folds_retrained": 5,
+        "local_folds_reconstructed": 5,
+        "validation_owners_excluded": true,
+        "final_normal_bank_images": 200,
+        "labelled_training_images": 250,
+        "svm_selected_id": 0,
+        "fusion_selected_id": 0,
+        "normalization_reconstructed": true,
+        "final_local_distance_audit": {
+          "descriptors_checked": 64,
+          "max_numpy_distance_error": 7.494005416219807e-16,
+          "top_descriptor_count": 6
+        },
+        "fold_distance_audits": [
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 7.771561172376096e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.7763568394002505e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.942890293094024e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.304512053934559e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.27675647831893e-15,
+            "top_descriptor_count": 6
+          }
+        ]
+      },
+      "previous_v3_reconstruction": {
+        "svm_candidates_retrained": 16,
+        "svm_folds_retrained": 80,
+        "local_folds_reconstructed": 5,
+        "validation_owners_excluded": true,
+        "final_normal_bank_images": 200,
+        "labelled_training_images": 250,
+        "svm_selected_id": 8,
+        "fusion_selected_id": 2,
+        "normalization_reconstructed": true,
+        "final_local_distance_audit": {
+          "descriptors_checked": 64,
+          "max_numpy_distance_error": 7.494005416219807e-16,
+          "top_descriptor_count": 6
+        },
+        "fold_distance_audits": [
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 7.771561172376096e-16,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.7763568394002505e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.942890293094024e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.304512053934559e-15,
+            "top_descriptor_count": 6
+          },
+          {
+            "descriptors_checked": 64,
+            "max_numpy_distance_error": 1.27675647831893e-15,
+            "top_descriptor_count": 6
+          }
+        ]
+      },
+      "methods": {
+        "baseline": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 1.2551967116307967,
+          "normal_p_value_available": true,
+          "predictions_checked": 47,
+          "max_score_error": 1.7763568394002505e-15
+        },
+        "normal_reference": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 0.7036143989840218,
+          "normal_p_value_available": true,
+          "predictions_checked": 47,
+          "max_score_error": 0.0
+        },
+        "improved": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": 1.7346088305385357,
+          "normal_p_value_available": false,
+          "predictions_checked": 47,
+          "max_score_error": 8.881784197001252e-16
+        },
+        "supervised_only": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": -0.2671355670877692,
+          "normal_p_value_available": false,
+          "predictions_checked": 47,
+          "max_score_error": 0.0
+        },
+        "previous_v3": {
+          "alpha": "",
+          "decision_rule": ">=",
+          "threshold": 1.6331225638426574,
+          "normal_p_value_available": false,
+          "predictions_checked": 47,
+          "max_score_error": 8.881784197001252e-16
+        }
+      }
+    },
+    "thyroid": {
+      "kind": "power_reference",
+      "normal_fit": 1425,
+      "normal_calibration": 357,
+      "normal_bank_owners_are_fit_only": true,
+      "normal_reference_vectors": 1425,
+      "normal_reference_distance_audit": {
+        "descriptors_checked": 64,
+        "max_numpy_distance_error": 5.773159728050814e-15,
+        "top_descriptor_count": 1
+      },
+      "primary_reconstruction": {
+        "normal_fit_rows": 1425,
+        "normal_calibration_rows": 357,
+        "features_1based": [
+          2,
+          6
+        ],
+        "normal_only_transform_rebuilt": true,
+        "normal_only_quantile_scale_rebuilt": true,
+        "normal_prototype_rebuilt": true,
+        "shared_core_class": "NormalBagDetector",
+        "distance": "manhattan",
+        "reference_vectors": 1,
+        "score": "positive standardized feature 2 times negative standardized feature 6",
+        "descriptor_dimension": 1,
+        "score_normalization": "one-dimensional normal-reference distance",
+        "development_selection_was_test_informed": true,
+        "independent_test": false
+      },
+      "previous_v3_reconstruction": {
+        "models": 5,
+        "proper_fit_rows": 1425,
+        "final_calibration_rows": 357,
+        "calibration_excluded_from_subsampling": true,
+        "submodels": [
+          {
+            "seed": 42,
+            "normal_reference_rows": 1282,
+            "loo_score_count": 1282,
+            "loo_median_scale": 0.4290298866634442,
+            "distance_audit": {
+              "descriptors_checked": 64,
+              "max_numpy_distance_error": 9.769962616701378e-15,
+              "top_descriptor_count": 1
+            }
+          },
+          {
+            "seed": 43,
+            "normal_reference_rows": 1282,
+            "loo_score_count": 1282,
+            "loo_median_scale": 0.43282394000278,
+            "distance_audit": {
+              "descriptors_checked": 64,
+              "max_numpy_distance_error": 1.4210854715202004e-14,
+              "top_descriptor_count": 1
+            }
+          },
+          {
+            "seed": 44,
+            "normal_reference_rows": 1282,
+            "loo_score_count": 1282,
+            "loo_median_scale": 0.42996598938957437,
+            "distance_audit": {
+              "descriptors_checked": 64,
+              "max_numpy_distance_error": 7.549516567451064e-15,
+              "top_descriptor_count": 1
+            }
+          },
+          {
+            "seed": 45,
+            "normal_reference_rows": 1282,
+            "loo_score_count": 1282,
+            "loo_median_scale": 0.42637563372079024,
+            "distance_audit": {
+              "descriptors_checked": 64,
+              "max_numpy_distance_error": 5.329070518200751e-15,
+              "top_descriptor_count": 1
+            }
+          },
+          {
+            "seed": 46,
+            "normal_reference_rows": 1282,
+            "loo_score_count": 1282,
+            "loo_median_scale": 0.42619540223646324,
+            "distance_audit": {
+              "descriptors_checked": 64,
+              "max_numpy_distance_error": 1.7206381527912207e-09,
+              "top_descriptor_count": 1
+            }
+          }
+        ]
+      },
+      "methods": {
+        "baseline": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 0.6376911454572033,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 3.552713678800501e-15
+        },
+        "normal_reference": {
+          "alpha": 0.01,
+          "decision_rule": ">",
+          "threshold": 3.405370788479073,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 0.0
+        },
+        "improved": {
+          "alpha": 0.005,
+          "decision_rule": ">",
+          "threshold": 0.8496630153698963,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 0.0
+        },
+        "improved_alpha_0.01": {
+          "alpha": 0.01,
+          "decision_rule": ">",
+          "threshold": 0.7146824640707268,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 0.0
+        },
+        "improved_alpha_0.02": {
+          "alpha": 0.02,
+          "decision_rule": ">",
+          "threshold": 0.6141661650107065,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 0.0
+        },
+        "improved_alpha_0.05": {
+          "alpha": 0.05,
+          "decision_rule": ">",
+          "threshold": 0.34898142149386724,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 0.0
+        },
+        "previous_v3": {
+          "alpha": 0.01,
+          "decision_rule": ">",
+          "threshold": 8.001999734643714,
+          "normal_p_value_available": true,
+          "predictions_checked": 1933,
+          "max_score_error": 1.1368683772161603e-13
+        }
+      }
+    }
+  },
+  "metric_rows_checked": 24,
+  "prediction_rows_checked": 14041,
+  "calibration_rows_checked": 1588,
+  "error_analysis_rows_checked": 7,
+  "pre_label_predictions_unchanged": true,
+  "thyroid_features_match_raw": true,
+  "raw_images": {
+    "performed": true,
+    "batch_size": 8,
+    "total_images": 602,
+    "domains": {
+      "hazelnut": {
+        "images": 305,
+        "max_global_feature_error": 0.0,
+        "max_local_feature_error": 0.0
+      },
+      "zipper": {
+        "images": 297,
+        "max_global_feature_error": 0.0,
+        "max_local_feature_error": 0.0
+      }
+    }
+  },
+  "compare": {
+    "directory": "results/run2",
+    "rows": 14041,
+    "absolute_tolerance": 1e-06,
+    "max_errors": {
+      "score": 0.0,
+      "threshold": 0.0,
+      "p_normal": 0.0
+    },
+    "identical_predictions": true
+  },
+  "verified_utc": "2026-11-26T12:49:33.322198+00:00",
+  "elapsed_seconds": 100.09339239995461
+}

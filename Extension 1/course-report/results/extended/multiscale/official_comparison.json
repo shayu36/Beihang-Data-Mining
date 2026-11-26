@@ -1,0 +1,26 @@
+{
+  "winner": "multiscale_1",
+  "rows": 4070,
+  "baseline_matches_original": true,
+  "original_scores_sha256": "560621301664be9327b833429445c81653675716f8027d645276821f4d91ad91",
+  "frozen_sha256": "da3fd3b0895b84c46e0268bb60c349e9e511ecd51ff45c60cbd5c31198f979d2",
+  "scores_sha256": "52969321566ab5256e460ef4f55c5f415c2fa2df643c273ce18e698274cb0d19",
+  "paired_changes": {
+    "hazelnut": {
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 11,
+      "unchanged": 44
+    },
+    "zipper": {
+      "wrong_to_correct": 0,
+      "correct_to_wrong": 2,
+      "unchanged": 45
+    },
+    "thyroid": {
+      "wrong_to_correct": 48,
+      "correct_to_wrong": 73,
+      "unchanged": 1812
+    }
+  },
+  "metrics_sha256": "dae6f8b715a8b05680aff34cba0e771ba84bdaf4cd0bbcda9e63009ec1d72ca0"
+}

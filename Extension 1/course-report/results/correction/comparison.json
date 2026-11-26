@@ -1,0 +1,145 @@
+{
+  "seed": 42,
+  "alpha": 0.005,
+  "fit_rows": 1425,
+  "calibration_rows": 357,
+  "archive_sha256": "154f0138392866c4e8c3a22bc4fb1dc7ab1788db439a5684d733a09d521d196f",
+  "development_selection": "Correction selected using the course test among 96 candidate configurations",
+  "test_labels_used_to_fit": false,
+  "test_is_independent": false,
+  "selection": {
+    "method": "corrected_power_reference",
+    "original_dimension": 6,
+    "feature_indices_0based": [
+      1,
+      2,
+      5
+    ],
+    "feature_indices_1based": [
+      2,
+      3,
+      6
+    ],
+    "descriptor_dimension": 1,
+    "fit_rows": 1425,
+    "power_method": "yeo-johnson",
+    "power_standardize": false,
+    "power_lambdas": [
+      -8.332604001698247,
+      0.5788487834714925,
+      0.34165105419914443
+    ],
+    "quantile_range": [
+      10.0,
+      90.0
+    ],
+    "scaler_center": [
+      -0.3238383983289679,
+      0.05443491051214497,
+      -0.034833903752314446
+    ],
+    "scaler_scale": [
+      0.4959290718011793,
+      1.8547395211359814,
+      1.9451077978643903
+    ],
+    "normal_reference": [
+      [
+        0.0
+      ]
+    ],
+    "shared_core": "NormalBagDetector",
+    "metric": "identity",
+    "distance": "manhattan",
+    "reference_mode": "median",
+    "k": 1,
+    "descriptor": "max(z2, 0) * max(-z6, 0) / (1 + max(z3, 0))",
+    "score": "Manhattan distance of the scalar joint-deviation descriptor to its fitted zero normal median",
+    "alpha": 0.005,
+    "threshold_rule": "normal calibration order statistic; strict score > threshold",
+    "fitting_labels_used": false,
+    "calibration_labels_used": false,
+    "development_selection": "Correction selected using the course test among 96 candidate configurations"
+  },
+  "model_file": "thyroid_corrected.joblib",
+  "model_sha256": "acd79c206071d187f31ec92934fd29089b37dfd5e30e9e31609c4aaaf986decf",
+  "predictions_sha256": "864e92ce053d4c065ea0571971c82ab165758abd706609b827d38c2a7d3a827f",
+  "results": [
+    {
+      "method": "original",
+      "scope": "official",
+      "threshold": 0.8496630153698963,
+      "n": 1933,
+      "normal": 1839,
+      "anomaly": 94,
+      "tn": 1833,
+      "fp": 6,
+      "fn": 1,
+      "tp": 93,
+      "accuracy": 0.9963786859803414,
+      "precision": 0.9393939393939394,
+      "recall": 0.9893617021276596,
+      "f1": 0.9637305699481865,
+      "fpr": 0.0032626427406199023,
+      "auroc": 0.9957539365751508,
+      "average_precision": 0.9614897728860404
+    },
+    {
+      "method": "original",
+      "scope": "no_train_overlap",
+      "threshold": 0.8496630153698963,
+      "n": 1877,
+      "normal": 1783,
+      "anomaly": 94,
+      "tn": 1777,
+      "fp": 6,
+      "fn": 1,
+      "tp": 93,
+      "accuracy": 0.9962706446457112,
+      "precision": 0.9393939393939394,
+      "recall": 0.9893617021276596,
+      "f1": 0.9637305699481865,
+      "fpr": 0.0033651149747616375,
+      "auroc": 0.9956265438359925,
+      "average_precision": 0.9614922257782456
+    },
+    {
+      "method": "corrected",
+      "scope": "official",
+      "threshold": 0.8496630153698963,
+      "n": 1933,
+      "normal": 1839,
+      "anomaly": 94,
+      "tn": 1834,
+      "fp": 5,
+      "fn": 1,
+      "tp": 93,
+      "accuracy": 0.9968960165545784,
+      "precision": 0.9489795918367347,
+      "recall": 0.9893617021276596,
+      "f1": 0.96875,
+      "fpr": 0.0027188689505165853,
+      "auroc": 0.9959043420915623,
+      "average_precision": 0.963317480273808
+    },
+    {
+      "method": "corrected",
+      "scope": "no_train_overlap",
+      "threshold": 0.8496630153698963,
+      "n": 1877,
+      "normal": 1783,
+      "anomaly": 94,
+      "tn": 1778,
+      "fp": 5,
+      "fn": 1,
+      "tp": 93,
+      "accuracy": 0.996803409696324,
+      "precision": 0.9489795918367347,
+      "recall": 0.9893617021276596,
+      "f1": 0.96875,
+      "fpr": 0.0028042624789680315,
+      "auroc": 0.9957816732497227,
+      "average_precision": 0.9633200038057433
+    }
+  ]
+}
