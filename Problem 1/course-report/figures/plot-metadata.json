@@ -1,0 +1,223 @@
+{
+  "main_assignment": "deep_s11",
+  "embedding": {
+    "pca_variance_ratio": [
+      0.2864983962126733,
+      0.20514611207244596
+    ],
+    "color_alignment": "Hungarian matching for presentation only; identical PCA coordinates in both panels"
+  },
+  "examples": [
+    {
+      "cluster": "0",
+      "row": 0,
+      "index": 494,
+      "filename": "495.png",
+      "true_label": "bottle",
+      "squared_distance": 0.00669825272253422,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "0",
+      "row": 1,
+      "index": 5,
+      "filename": "006.png",
+      "true_label": "bottle",
+      "squared_distance": 0.0071299551560645566,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "1",
+      "row": 0,
+      "index": 541,
+      "filename": "542.png",
+      "true_label": "tile",
+      "squared_distance": 0.028652759006739404,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "1",
+      "row": 1,
+      "index": 37,
+      "filename": "038.png",
+      "true_label": "tile",
+      "squared_distance": 0.03832753490618032,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "2",
+      "row": 0,
+      "index": 570,
+      "filename": "571.png",
+      "true_label": "pill",
+      "squared_distance": 0.024954235540047894,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "2",
+      "row": 1,
+      "index": 447,
+      "filename": "448.png",
+      "true_label": "pill",
+      "squared_distance": 0.02501813380046709,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "3",
+      "row": 0,
+      "index": 421,
+      "filename": "422.png",
+      "true_label": "leather",
+      "squared_distance": 0.005936843302765473,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "3",
+      "row": 1,
+      "index": 139,
+      "filename": "140.png",
+      "true_label": "leather",
+      "squared_distance": 0.007441548094119024,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "4",
+      "row": 0,
+      "index": 60,
+      "filename": "061.png",
+      "true_label": "transistor",
+      "squared_distance": 0.03471173041043977,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "4",
+      "row": 1,
+      "index": 542,
+      "filename": "543.png",
+      "true_label": "transistor",
+      "squared_distance": 0.035615883262957775,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "5",
+      "row": 0,
+      "index": 310,
+      "filename": "311.png",
+      "true_label": "cable",
+      "squared_distance": 0.03867348758668197,
+      "cluster_size": 100
+    },
+    {
+      "cluster": "5",
+      "row": 1,
+      "index": 409,
+      "filename": "410.png",
+      "true_label": "cable",
+      "squared_distance": 0.03957717843476684,
+      "cluster_size": 100
+    }
+  ],
+  "comparison": [
+    {
+      "method": "handcrafted",
+      "key": "handcrafted",
+      "n": 5,
+      "seeds": [
+        11,
+        23,
+        37,
+        53,
+        71
+      ],
+      "metrics": {
+        "acc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ari": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "nmi": {
+          "mean": 1.0,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "method": "deep",
+      "key": "deep",
+      "n": 5,
+      "seeds": [
+        11,
+        23,
+        37,
+        53,
+        71
+      ],
+      "metrics": {
+        "acc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ari": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "nmi": {
+          "mean": 1.0,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "method": "deep_pca",
+      "key": "deep_pca",
+      "n": 5,
+      "seeds": [
+        11,
+        23,
+        37,
+        53,
+        71
+      ],
+      "metrics": {
+        "acc": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "ari": {
+          "mean": 1.0,
+          "std": 0.0
+        },
+        "nmi": {
+          "mean": 1.0,
+          "std": 0.0
+        }
+      }
+    },
+    {
+      "method": "ward",
+      "key": "ward",
+      "n": 1,
+      "seeds": [
+        0
+      ],
+      "metrics": {
+        "acc": {
+          "mean": 1.0,
+          "std": null
+        },
+        "ari": {
+          "mean": 1.0,
+          "std": null
+        },
+        "nmi": {
+          "mean": 1.0,
+          "std": null
+        }
+      }
+    }
+  ],
+  "source_run": "C:\\Users\\R\\Desktop\\大三学习资料\\数据挖掘大作业\\Problem 1\\results\\run"
+}

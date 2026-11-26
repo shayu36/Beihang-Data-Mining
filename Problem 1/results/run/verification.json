@@ -1,0 +1,262 @@
+{
+  "status": "passed",
+  "scope": "Saved-artifact consistency and independent metric reconstruction; no image encoding or model fitting rerun, no independent proof of historical execution order",
+  "passed_checks": [
+    "SHA256 of every artifact named in sealed_before_evaluation.json matches the saved seal",
+    "Feature inventory exactly covers 600 official filenames; representations have declared shapes and finite unit rows",
+    "Saved PCA features reproduce from deep features, saved PCA mean/components, and L2 normalization",
+    "Cluster and center inventories match all 16 declared experiments; assignments have six nonempty clusters",
+    "All 15 KMeans assignments equal the nearest saved center for their saved feature representation",
+    "Prediction filenames preserve feature order and every prediction equals sealed deep_s11 assignment",
+    "All 16 rows preserve sealed internal metrics and independently recomputed ACC, ARI, arithmetic NMI match all_metrics.csv",
+    "Saved true_label values agree with official labels by filename and metrics.json.external matches independently recomputed metrics"
+  ],
+  "seal_sha256": "107bd31a4d6098c196cc7ff3d469e1624fee5b1fb0104f450ecf720f677cfddc",
+  "pca_model_sha256": "6d104822735d311f07d14fb0e7a6c782f1f2a07c62b5c02b7abfd5ce994000f1",
+  "verified_artifact_sha256": {
+    "protocol.json": "fd8ec7db705cd3c96529aac24091573e77d7bb1fb5830ccb2be0f6375615dd78",
+    "features.npz": "4231a4399401113d00e26989953de72107602620e4f28a08b23243403e743e16",
+    "clusters.npz": "eacbe5c850c71a2964566b0194ffc724aa86d14a5ab25e6eca19517d530c6e71",
+    "centers.npz": "22ac7a43a08db452aba2623a4a1c1f1f69288faeed90977517b1ce57945fa15e",
+    "internal_metrics.csv": "3521c13d575565a2657a3155278b1a996ea00f3c7c7e4a3ebf27a04d82d3ea8c"
+  },
+  "feature_shapes": {
+    "handcrafted": [
+      600,
+      138
+    ],
+    "deep": [
+      600,
+      512
+    ],
+    "deep_pca": [
+      600,
+      64
+    ]
+  },
+  "verified_experiment_count": 16,
+  "all_external_recomputed": {
+    "deep_pca_s11": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_pca_s23": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_pca_s37": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_pca_s53": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_pca_s71": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_s11": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_s23": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_s37": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_s53": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "deep_s71": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "handcrafted_s11": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "handcrafted_s23": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "handcrafted_s37": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "handcrafted_s53": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "handcrafted_s71": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "ward_s0": {
+      "acc": 1.0,
+      "ari": 1.0,
+      "nmi": 1.0
+    }
+  },
+  "predictions_sha256": "eea39ebc2f50b31bad37b6b7cc2da199b10ba00718cd5111ae2fa8b705060f14",
+  "saved_metrics_sha256": "6e0a5d4fa458ee403ca46b4e2d68b5ea37b764278021edbfcb866068e2c4d692",
+  "external": {
+    "n_samples": 600,
+    "n_classes": 6,
+    "n_clusters": 6,
+    "acc": 1.0,
+    "ari": 1.0,
+    "nmi": 1.0,
+    "class_names": [
+      "bottle",
+      "cable",
+      "leather",
+      "pill",
+      "tile",
+      "transistor"
+    ],
+    "cluster_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cluster_to_class": {
+      "0": "bottle",
+      "1": "tile",
+      "2": "pill",
+      "3": "leather",
+      "4": "transistor",
+      "5": "cable"
+    },
+    "contingency_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    ],
+    "confusion_columns": [
+      "bottle",
+      "cable",
+      "leather",
+      "pill",
+      "tile",
+      "transistor"
+    ]
+  }
+}

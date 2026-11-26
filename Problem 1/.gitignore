@@ -1,0 +1,11 @@
+.venv/
+.cache/
+__pycache__/
+course-report/build-course-report/
+course-report/build-tectonic/
+explanation/build/
+*.log
+*.aux
+*.out
+*.xdv
+*.synctex.gz

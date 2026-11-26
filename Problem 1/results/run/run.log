@@ -1,0 +1,253 @@
+Encoded 16/600
+Encoded 32/600
+Encoded 48/600
+Encoded 64/600
+Encoded 80/600
+Encoded 96/600
+Encoded 112/600
+Encoded 128/600
+Encoded 144/600
+Encoded 160/600
+Encoded 176/600
+Encoded 192/600
+Encoded 208/600
+Encoded 224/600
+Encoded 240/600
+Encoded 256/600
+Encoded 272/600
+Encoded 288/600
+Encoded 304/600
+Encoded 320/600
+Encoded 336/600
+Encoded 352/600
+Encoded 368/600
+Encoded 384/600
+Encoded 400/600
+Encoded 416/600
+Encoded 432/600
+Encoded 448/600
+Encoded 464/600
+Encoded 480/600
+Encoded 496/600
+Encoded 512/600
+Encoded 528/600
+Encoded 544/600
+Encoded 560/600
+Encoded 576/600
+Encoded 592/600
+Encoded 600/600
+Clustered handcrafted_s11: sizes=[100, 100, 100, 100, 100, 100]
+Clustered handcrafted_s23: sizes=[100, 100, 100, 100, 100, 100]
+Clustered handcrafted_s37: sizes=[100, 100, 100, 100, 100, 100]
+Clustered handcrafted_s53: sizes=[100, 100, 100, 100, 100, 100]
+Clustered handcrafted_s71: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_s11: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_s23: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_s37: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_s53: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_s71: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_pca_s11: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_pca_s23: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_pca_s37: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_pca_s53: sizes=[100, 100, 100, 100, 100, 100]
+Clustered deep_pca_s71: sizes=[100, 100, 100, 100, 100, 100]
+Clustered ward_s0: sizes=[100, 100, 100, 100, 100, 100]
+{
+  "handcrafted": {
+    "acc": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "ari": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "nmi": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "silhouette": {
+      "mean": 0.8374256629957297,
+      "std": 0.0
+    },
+    "calinski_harabasz": {
+      "mean": 2803.442628092557,
+      "std": 4.547473508864641e-13
+    },
+    "davies_bouldin": {
+      "mean": 0.33328645768677145,
+      "std": 4.8074067159589095e-17
+    },
+    "seconds": {
+      "mean": 0.06695461999624967,
+      "std": 0.0192593326531436
+    },
+    "n_runs": 5,
+    "pairwise_stability_ari": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "stability_mean": 1.0,
+    "representative_cluster_sizes": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ]
+  },
+  "deep": {
+    "acc": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "ari": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "nmi": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "silhouette": {
+      "mean": 0.6782820422777172,
+      "std": 0.0
+    },
+    "calinski_harabasz": {
+      "mean": 961.2010516611908,
+      "std": 0.0
+    },
+    "davies_bouldin": {
+      "mean": 0.5397748421627101,
+      "std": 0.0
+    },
+    "seconds": {
+      "mean": 0.1049911799840629,
+      "std": 0.015394103189130889
+    },
+    "n_runs": 5,
+    "pairwise_stability_ari": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "stability_mean": 1.0,
+    "representative_cluster_sizes": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ]
+  },
+  "deep_pca": {
+    "acc": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "ari": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "nmi": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "silhouette": {
+      "mean": 0.720317842858418,
+      "std": 0.0
+    },
+    "calinski_harabasz": {
+      "mean": 1222.9826617880244,
+      "std": 1.1368683772161603e-13
+    },
+    "davies_bouldin": {
+      "mean": 0.46922721627046193,
+      "std": 7.850462293418876e-17
+    },
+    "seconds": {
+      "mean": 0.04550744000589475,
+      "std": 0.0014105407480604387
+    },
+    "n_runs": 5,
+    "pairwise_stability_ari": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "stability_mean": 1.0,
+    "representative_cluster_sizes": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ]
+  },
+  "ward": {
+    "acc": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "ari": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "nmi": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "silhouette": {
+      "mean": 0.6782820422777172,
+      "std": 0.0
+    },
+    "calinski_harabasz": {
+      "mean": 961.2010516611906,
+      "std": 0.0
+    },
+    "davies_bouldin": {
+      "mean": 0.5397748421627101,
+      "std": 0.0
+    },
+    "seconds": {
+      "mean": 0.45400829997379333,
+      "std": 0.0
+    },
+    "n_runs": 1,
+    "pairwise_stability_ari": [],
+    "stability_mean": null,
+    "representative_cluster_sizes": [
+      100,
+      100,
+      100,
+      100,
+      100,
+      100
+    ]
+  }
+}

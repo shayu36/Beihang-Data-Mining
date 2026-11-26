@@ -1,0 +1,50 @@
+{
+  "n_images": 600,
+  "image_sizes": {
+    "1024x1024": 300,
+    "800x800": 100,
+    "900x900": 100,
+    "840x840": 100
+  },
+  "image_modes": {
+    "RGB": 600
+  },
+  "duplicate_pixel_pairs": [],
+  "unique_file_hashes": 600,
+  "archive_sha256": "3a8b47857ebbe9ef814cfaa1f5b18c0e16253869dbb5dfe3df86e32f484581bb",
+  "checkpoint_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "checkpoint_name": "resnet18-f37072fd.pth",
+  "feature_seconds": 54.593951000017114,
+  "torch_version": "2.15.0+cpu",
+  "device": "cpu",
+  "threads": 4,
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.15.0+cpu",
+      "torchvision": "0.29.2+cpu",
+      "numpy": "2.5.5",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "scikit-image": "0.26.0",
+      "Pillow": "13.0.0"
+    }
+  },
+  "source_hashes": {
+    "features.py": "260d4ffbec175fffdce6bd4c27c3c0b96986e28de6ba3c861c2ac3559c6c20d3",
+    "plots.py": "5fac82e95736bcbba4a1e29c84aca4676d545519a157a495ce58d5e5fc7a34e8",
+    "run.py": "b18778342929311346e416e8755e8960941a007a43216a6783ca8e109ea1fa47",
+    "test_evaluation.py": "be9de2bd42aa42233183d5fc110a61042adf81dd7f8e1c5619e85ea58085a008",
+    "verify.py": "0c51daa8eb6ec938cef50199861cf2e433b052a1d7244ce893c038e7f2090e6a"
+  },
+  "class_counts": {
+    "transistor": 100,
+    "leather": 100,
+    "pill": 100,
+    "bottle": 100,
+    "tile": 100,
+    "cable": 100
+  },
+  "completed_at_utc": "2026-11-26T10:34:10.035139+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "stage": "all_assignments_saved_before_label_read",
+  "sealed_at_utc": "2026-11-26T10:34:09.321998+00:00",
+  "artifacts": {
+    "protocol.json": "fd8ec7db705cd3c96529aac24091573e77d7bb1fb5830ccb2be0f6375615dd78",
+    "features.npz": "4231a4399401113d00e26989953de72107602620e4f28a08b23243403e743e16",
+    "clusters.npz": "eacbe5c850c71a2964566b0194ffc724aa86d14a5ab25e6eca19517d530c6e71",
+    "centers.npz": "22ac7a43a08db452aba2623a4a1c1f1f69288faeed90977517b1ce57945fa15e",
+    "internal_metrics.csv": "3521c13d575565a2657a3155278b1a996ea00f3c7c7e4a3ebf27a04d82d3ea8c"
+  },
+  "pca_explained_variance": 0.9733514885082358
+}

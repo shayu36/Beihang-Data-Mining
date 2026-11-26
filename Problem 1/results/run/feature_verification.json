@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "scope": "12 original images re-encoded without reading class labels; independent ResNet construction, shared HSV/LBP descriptor",
+  "sample_selection": "np.linspace(0, 599, 12, dtype=int), in saved filename order",
+  "n_samples": 12,
+  "samples": [
+    {
+      "index": 0,
+      "filename": "001.png",
+      "raw_sha256": "171ea2a3edee40070c0b35056b854034c1c48de23f82ff7b0ced1faa30f12366",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 54,
+      "filename": "055.png",
+      "raw_sha256": "4425b06747406c893a9164417ef5fcdf44becc9e9867d29dee2fe17b660d6818",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 108,
+      "filename": "109.png",
+      "raw_sha256": "0c45f021e169dc8b27120c4c70ea09c0a4e3391482ed4dda4a04baf7b2098b85",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 163,
+      "filename": "164.png",
+      "raw_sha256": "0cb1a67250bd4643b058585e8d2a5a845a0c51ad4fb8dfe05bee011ae7b5a419",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 217,
+      "filename": "218.png",
+      "raw_sha256": "26234d5ce93b41a7d52a0924f0ed916aa9c2dfbbc51496a1ed6e3a83b6f77d0e",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 272,
+      "filename": "273.png",
+      "raw_sha256": "1bc5b501352b19ef471736ed83d88a50625ed67c08b5fdb9e6a4f77e813e616e",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 326,
+      "filename": "327.png",
+      "raw_sha256": "fe999421df95604555b3c253f524e4a6328f16dc8dfe24de6eb66a34fda43d97",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 381,
+      "filename": "382.png",
+      "raw_sha256": "c798d7a09178c6fc8945f3f33cda923d0bf91542e764334629fd5dfb6d99c5f9",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 435,
+      "filename": "436.png",
+      "raw_sha256": "ccaf71e5a631d2b813d0ee1bca13d63b68e3d4742e47fd80eac4d9b6d229bcfc",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 490,
+      "filename": "491.png",
+      "raw_sha256": "55c206416286166bf561f783eb16f01941e843858614e72546892454c55d98b2",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 544,
+      "filename": "545.png",
+      "raw_sha256": "fd80152af2c1a1f7dbe509be6c9e6de1f62e00ad2f01b6974d5a7d977ebbb57c",
+      "raw_sha256_matches_saved": true
+    },
+    {
+      "index": 599,
+      "filename": "600.png",
+      "raw_sha256": "e9861f73abb873306db658ae65a7c240974c4ee5453d22ecbe6dd460c7762979",
+      "raw_sha256_matches_saved": true
+    }
+  ],
+  "checkpoint_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "checkpoint_name": "resnet18-f37072fd.pth",
+  "saved_features_sha256": "4231a4399401113d00e26989953de72107602620e4f28a08b23243403e743e16",
+  "source_sha256": {
+    "verify_features.py": "c87518952ccd6adaaa3fc9edfc2d5c1161ed5b65b6ee814c1fc0f447aa171e07",
+    "features.py": "260d4ffbec175fffdce6bd4c27c3c0b96986e28de6ba3c861c2ac3559c6c20d3"
+  },
+  "environment": {
+    "device": "cpu",
+    "threads": 4,
+    "torch": "2.15.0+cpu"
+  },
+  "normalization": "float64 L2 per image; comparison uses rtol=0, atol=1e-6",
+  "feature_checks": {
+    "deep": {
+      "shape": [
+        12,
+        512
+      ],
+      "maximum_absolute_error": 0.0,
+      "allclose": true,
+      "atol": 1e-06,
+      "rtol": 0.0,
+      "per_image_maximum_absolute_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "handcrafted": {
+      "shape": [
+        12,
+        138
+      ],
+      "maximum_absolute_error": 0.0,
+      "allclose": true,
+      "atol": 1e-06,
+      "rtol": 0.0,
+      "per_image_maximum_absolute_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "task": "600-image transductive clustering; K=6 from assignment",
+  "primary_method": "deep",
+  "primary_seed": 11,
+  "selection": "Predeclared primary method and seed; no external-label selection",
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "n_clusters": 6,
+  "kmeans": {
+    "init": "k-means++",
+    "n_init": 20,
+    "max_iter": 300,
+    "tol": 0.0001
+  },
+  "handcrafted": {
+    "resize": [
+      224,
+      224
+    ],
+    "hsv_bins": [
+      8,
+      4,
+      4
+    ],
+    "lbp_P": 8,
+    "lbp_R": 1,
+    "lbp_method": "uniform",
+    "dimension": 138,
+    "normalization": "sqrt(L1 histogram) per block, concatenate / sqrt(2)"
+  },
+  "deep": {
+    "architecture": "resnet18",
+    "weights": "IMAGENET1K_V1",
+    "layer": "avgpool",
+    "dimension": 512,
+    "transform": "official weights.transforms(); resize256 center224",
+    "normalization": "L2 per sample",
+    "finetuning": false
+  },
+  "pca": {
+    "n_components": 64,
+    "svd_solver": "full",
+    "whiten": false,
+    "normalization": "L2 after PCA",
+    "fit_scope": "all 600 unlabelled images"
+  },
+  "ward": {
+    "linkage": "ward",
+    "metric": "euclidean",
+    "representation": "deep"
+  },
+  "external_metrics": [
+    "optimal-matching ACC",
+    "ARI",
+    "NMI arithmetic"
+  ],
+  "timestamp_note": "UTC timestamps; client reporting date uses Asia/Shanghai",
+  "frozen_at_utc": "2026-11-26T10:33:12.255534+00:00"
+}

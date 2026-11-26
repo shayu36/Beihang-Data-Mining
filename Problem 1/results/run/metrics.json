@@ -1,0 +1,146 @@
+{
+  "external": {
+    "n_samples": 600,
+    "n_classes": 6,
+    "n_clusters": 6,
+    "acc": 1.0,
+    "ari": 1.0,
+    "nmi": 1.0,
+    "class_names": [
+      "bottle",
+      "cable",
+      "leather",
+      "pill",
+      "tile",
+      "transistor"
+    ],
+    "cluster_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "cluster_to_class": {
+      "0": "bottle",
+      "1": "tile",
+      "2": "pill",
+      "3": "leather",
+      "4": "transistor",
+      "5": "cable"
+    },
+    "contingency_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        100,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100
+      ]
+    ],
+    "confusion_columns": [
+      "bottle",
+      "cable",
+      "leather",
+      "pill",
+      "tile",
+      "transistor"
+    ]
+  },
+  "primary_method": "deep",
+  "primary_seed": 11,
+  "evaluation_started_after": "2026-11-26T10:34:09.321998+00:00",
+  "evaluation_completed_at_utc": "2026-11-26T10:34:09.601624+00:00"
+}

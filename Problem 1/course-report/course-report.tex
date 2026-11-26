@@ -1,0 +1,22 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8
+\documentclass[sigconf,nonacm,screen,balance=false]{acmart}
+\usepackage{styles/course-report}
+\usepackage{amsmath,booktabs,array,multirow}
+\usepackage{balance}
+\setcitestyle{numbers,square,comma}
+\title[数据挖掘导论课程报告]{数据挖掘导论课程报告}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ind}{\mathbb{I}}
+\begin{document}
+\raggedbottom
+\maketitle
+\section{冻结视觉特征与 K-means 的图像聚类}
+\label{sec:task1}
+\input{sec/task1-method}
+\input{sec/task1-protocol}
+\InputIfFileExists{sec/task1-results.tex}{}{}
+\FloatBarrier
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{bib/course-report-references}
+\end{document}
